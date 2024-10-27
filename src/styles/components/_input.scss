@@ -1,0 +1,27 @@
+.input__container {
+  width: 100%;
+
+  &--input {
+    border: $input-border;
+    width: 100%;
+    padding: 15px 30px;
+
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+      border: $input-focus-border;
+      outline: none;
+    }
+  }
+
+  &__error {
+    color: $error;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1.6px;
+    transition: all 500ms ease-in-out;
+    margin-top: 15px;
+  }
+}

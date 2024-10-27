@@ -1,0 +1,38 @@
+.login {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  &__left {
+    flex-direction: column;
+    padding: 6.5rem 5rem;
+    flex-basis: 45%;
+
+    &--logo {
+      gap: 0.5rem;
+      display: inline-flex;
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    padding: 6.5rem 5rem;
+    flex-direction: column;
+    flex-basis: 45%;
+    justify-content: center;
+
+    &--text {
+      h2 {
+        font-size: 2.3rem;
+        font-family: var(--font-avenir-bold), sans-serif;
+        color: $primary-accent;
+      }
+
+      p {
+        font-size: 1.2rem;
+        font-family: var(--font-avenir-light), sans-serif;
+      }
+    }
+  }
+}
