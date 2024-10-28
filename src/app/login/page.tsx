@@ -2,14 +2,13 @@
 
 import React, { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import Logo from "../components/icons/logo";
-import LogoText from "../components/icons/logo-text";
 import Image from "next/image";
 import pablo from "@/src/public/pablo-avatar.png";
-import Input from "../components/Input";
+import Input from "../components/Input/Input";
 import useInput from "../utils/hooks/useInput";
 import isEmail from "../utils/functions/validateEmail";
 import isPassword from "../utils/functions/validatePassword";
+import Logo from "../components/Logo/Logo";
 
 export default function Login() {
   const [email, setEmail, clearEmail] = useInput("");
@@ -44,11 +43,10 @@ export default function Login() {
       <div className="login__left">
         <div className="login__left--logo">
           <Logo />
-          <LogoText />
         </div>
 
         <div className="login__left--avatar">
-          <Image src={pablo} alt="left" width={700} />
+          <Image src={pablo} alt="left" width={700} priority />
         </div>
       </div>
 

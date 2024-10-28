@@ -10,6 +10,7 @@ interface IInput {
   errorMessage?: string;
   className?: string;
   label?: string;
+  renderError: boolean;
 }
 
 const Input: FC<IInput> = ({
@@ -21,10 +22,10 @@ const Input: FC<IInput> = ({
   label,
   error = false,
   errorMessage = "",
+  renderError = true,
 }) => {
   const inputEl = useRef<HTMLInputElement>(null);
 
-  //toggling password visibility
   const togglePasswordVisibility = () => {
     if (inputEl.current) {
       inputEl.current.type =
@@ -61,12 +62,14 @@ const Input: FC<IInput> = ({
         )}
       </div>
 
-      <p
-        className={`input__container--error ${error ? "visible" : ""}`}
-        data-testid="error-message"
-      >
-        {errorMessage}
-      </p>
+      {renderError && (
+        <p
+          className={`input__container--error ${error ? "visible" : ""}`}
+          data-testid="error-message"
+        >
+          {errorMessage}
+        </p>
+      )}
     </div>
   );
 };

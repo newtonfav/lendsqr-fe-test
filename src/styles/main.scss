@@ -8,7 +8,10 @@
 @import "base/reset";
 @import "base/typography";
 
-@import "pages/dashboard";
+@import "layout/dashboard";
+
 @import "pages/login";
 
 @import "components/input";
+@import "components/logo";
+@import "components/navbar";

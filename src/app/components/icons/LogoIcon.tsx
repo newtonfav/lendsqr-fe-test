@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Logo() {
+export default function LogoIcon({ size = 25 }) {
   return (
     <svg
-      width="25"
-      height="26"
+      width={size}
+      height={(size * 26) / 25} // Adjusting height to maintain aspect ratio
       viewBox="0 0 25 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ export default function Logo() {
       <defs>
         <linearGradient
           id="paint0_linear_6819_58336"
-          x1="-1.87183e-06"
+          x1="0"
           y1="37.9211"
           x2="26.2531"
           y2="-5.22382"
