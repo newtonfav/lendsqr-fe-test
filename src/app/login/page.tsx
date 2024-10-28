@@ -1,18 +1,43 @@
 "use client";
 
-// import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import Logo from "../components/icons/logo";
 import LogoText from "../components/icons/logo-text";
 import Image from "next/image";
 import pablo from "@/src/public/pablo-avatar.png";
 import Input from "../components/Input";
 import useInput from "../utils/hooks/useInput";
+import isEmail from "../utils/functions/validateEmail";
+import isPassword from "../utils/functions/validatePassword";
 
 export default function Login() {
   const [email, setEmail, clearEmail] = useInput("");
-  // const [password, setPassword, clearPassword] = useInput("");
-  // const [emailError, setEmailError] = useState(false);
-  // const [passWordError, setPassWordError] = useState(false);
+  const [password, setPassword, clearPassword] = useInput("");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
+  const router = useRouter();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isEmail(String(email)) || !isPassword(String(password))) {
+      if (!isEmail(String(email))) {
+        setEmailError(true);
+        setTimeout(() => {
+          setEmailError(false);
+        }, 2000);
+      }
+      if (!isPassword(String(password))) {
+        setPasswordError(true);
+        setTimeout(() => {
+          setPasswordError(false);
+        }, 2000);
+      }
+      return;
+    }
+    router.push("/dashboard/users");
+  };
 
   return (
     <div className="login">
@@ -32,7 +57,8 @@ export default function Login() {
           <h2 className="">Welcome!</h2>
           <p>Enter details to login</p>
         </div>
-        <form className="login__right--form">
+
+        <form onSubmit={handleSubmit} className="login__right--form">
           <Input
             placeholder="Email"
             value={String(email)}
@@ -40,7 +66,19 @@ export default function Login() {
             errorMessage="Please enter a valid email"
             clearValue={clearEmail}
             type="text"
+            error={emailError}
           />
+          <Input
+            placeholder="Password"
+            type="password"
+            value={String(password)}
+            setValue={setPassword}
+            clearValue={clearPassword}
+            error={passwordError}
+            errorMessage="Password must include an uppercase letter, lowercase letter, number, and special character."
+          />
+          <span className="">Forgot Password?</span>
+          <button>Log in</button>
         </form>
       </div>
     </div>

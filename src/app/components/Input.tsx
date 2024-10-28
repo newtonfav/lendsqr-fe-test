@@ -1,44 +1,74 @@
-import React, { ChangeEvent, FC } from "react";
+import React, { ChangeEvent, FC, useRef } from "react";
 
 interface IInput {
   placeholder: string;
   value: string | number;
-  setValue: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
-  type: string;
-  clearValue: () => void;
+  setValue: (e: ChangeEvent<HTMLInputElement>) => void;
+  type: "text" | "password" | "number" | "email";
+  clearValue?: () => void;
   error?: boolean;
   errorMessage?: string;
   className?: string;
   label?: string;
 }
+
 const Input: FC<IInput> = ({
   placeholder,
   value,
   setValue,
-  type,
-  className,
+  type = "text",
+  className = "",
   label,
   error = false,
   errorMessage = "",
-}) => (
-  <div
-    className={`input__container ${className}`}
-    data-testid="input-container"
-  >
-    {!!label && <div className="input__container--label">{label}</div>}
-    <input
-      className={`input__container--input ${className}`}
-      {...{ placeholder, value, type }}
-      onChange={setValue}
-      data-testid="input"
-    />
+}) => {
+  const inputEl = useRef<HTMLInputElement>(null);
 
-    {!!error && (
-      <p className="input__container--error" data-testid="error-message">
+  //toggling password visibility
+  const togglePasswordVisibility = () => {
+    if (inputEl.current) {
+      inputEl.current.type =
+        inputEl.current.type === "password" ? "text" : "password";
+    }
+  };
+
+  return (
+    <div
+      className={`input__container ${className}`}
+      data-testid="input-container"
+    >
+      {!!label && <label className="input__container--label">{label}</label>}
+
+      <div className="input__container--wrapper">
+        <input
+          ref={inputEl}
+          className={`input__container--input ${className}`}
+          {...{ placeholder, value, type }}
+          onChange={setValue}
+          data-testid="input"
+        />
+
+        {type === "password" && value && (
+          <span
+            onClick={togglePasswordVisibility}
+            onKeyDown={togglePasswordVisibility}
+            className="input__container--toggle"
+            role="button"
+            tabIndex={0}
+          >
+            show
+          </span>
+        )}
+      </div>
+
+      <p
+        className={`input__container--error ${error ? "visible" : ""}`}
+        data-testid="error-message"
+      >
         {errorMessage}
       </p>
-    )}
-  </div>
-);
+    </div>
+  );
+};
 
 export default Input;
