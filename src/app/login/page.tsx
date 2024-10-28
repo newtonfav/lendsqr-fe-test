@@ -58,6 +58,7 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="login__right--form">
           <Input
+            renderError={true}
             placeholder="Email"
             value={String(email)}
             setValue={setEmail}
@@ -67,6 +68,7 @@ export default function Login() {
             error={emailError}
           />
           <Input
+            renderError={true}
             placeholder="Password"
             type="password"
             value={String(password)}

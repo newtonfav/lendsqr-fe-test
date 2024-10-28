@@ -1,0 +1,17 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-color;
+  padding: 2rem 2rem;
+  width: 20%;
+  z-index: 30;
+  box-shadow: 5px -10px 30px rgba(0, 0, 0, 0.04);
+  height: 100dvh;
+
+  &--organisation {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 300;
+  }
+}
