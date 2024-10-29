@@ -1,0 +1,27 @@
+.userstat {
+  background-color: $primary-color;
+  box-shadow: $box-shadow;
+  padding: 1.5rem 8rem 1.5rem 1.5rem;
+  width: 23%;
+  display: flex;
+  z-index: 50;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+
+  > *:first-child {
+    margin-bottom: 0.6rem;
+  }
+
+  &__users {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    width: max-content;
+  }
+
+  &__number {
+    color: $primary-accent;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}

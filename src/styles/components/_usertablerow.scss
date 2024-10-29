@@ -1,0 +1,32 @@
+.tablerow {
+  @include grid-template;
+  font-size: 0.8rem;
+  color: $tableheader-color;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  margin-top: 1rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__organisation {
+    text-transform: capitalize;
+  }
+
+  &__status {
+    background-color: $pending-background;
+    text-transform: capitalize;
+    border-radius: 5rem;
+
+    padding: 0.3rem 1.5rem;
+    color: $pending-text;
+    justify-self: start;
+  }
+
+  &__dots {
+    cursor: pointer;
+    justify-self: end;
+  }
+}

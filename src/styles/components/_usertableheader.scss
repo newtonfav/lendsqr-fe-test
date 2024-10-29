@@ -1,0 +1,17 @@
+.usertableheader {
+  @include grid-template;
+  margin-bottom: 1.5rem;
+
+  &__container {
+    font-size: 0.7rem;
+    align-items: center;
+    display: inline-flex;
+    gap: 0.8rem;
+    color: $tableheader-color;
+
+    &--text {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+}

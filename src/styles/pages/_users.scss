@@ -1,3 +1,20 @@
-// .users {
-//   background-color: $primary-color-200;
-// }
+.users {
+  padding: 1rem 2rem;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 450;
+    color: $primary-accent;
+    margin-bottom: 1rem;
+  }
+
+  &__userstats {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &__footer {
+    margin-top: 1rem;
+  }
+}
