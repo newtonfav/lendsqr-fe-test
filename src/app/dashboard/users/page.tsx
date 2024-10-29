@@ -5,6 +5,7 @@ import ActiveUsers from "../../components/icons/ActiveUsers";
 import UsersWithoans from "../../components/icons/UsersWithoans";
 import UsersWithSavings from "../../components/icons/UsersWithSavings";
 import UsersTable from "../../components/UsersTable/UsersTable";
+import UsersDashboardFooter from "../../components/UsersDashboardFooter/UsersDashboardFooter";
 
 export interface IUserStats {
   Icon: FC;
@@ -47,7 +48,7 @@ export default function Users() {
 
       <UsersTable />
 
-      <div className="users__footer">footer</div>
+      <UsersDashboardFooter />
     </div>
   );
 }

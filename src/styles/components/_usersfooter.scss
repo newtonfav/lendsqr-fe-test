@@ -1,0 +1,37 @@
+.usersfooter {
+  display: flex;
+  flex-direction: row;
+  font-weight: 250;
+  font-size: 0.9rem;
+  align-items: center;
+
+  &__pagenumber {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    &--number {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 450;
+      gap: 1rem;
+      background-color: $pagenumber-color;
+      padding: 0.2rem 0.7rem;
+    }
+  }
+
+  &__pagination {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+
+    &--leftarrow {
+      @include pagination-arrows;
+    }
+
+    &--rightarrow {
+      @include pagination-arrows;
+    }
+  }
+}
