@@ -7,11 +7,45 @@
   z-index: 30;
   box-shadow: 5px -10px 30px rgba(0, 0, 0, 0.04);
   height: 100dvh;
+  gap: 1.5rem;
+  overflow: scroll;
 
   &--organisation {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
     font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  &--elements {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 250;
+    margin-bottom: 1.5rem;
+
+    span {
+      font-size: 0.9rem;
+    }
+  }
+
+  &--link {
+    color: #7a8cb1;
+  }
+
+  &--active {
+    background-color: $sidebar-link-background;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &--header {
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+    }
   }
 }
