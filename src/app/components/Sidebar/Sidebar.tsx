@@ -9,13 +9,13 @@ import SidebarSections from "../SidebarSections/SidebarSections";
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      <div className="sidebar--organisation">
+      <div className="sidebar--static">
         <BriefCase />
         Switch Organization
         <DropDownOrg />
       </div>
 
-      <div className="sidebar--elements">
+      <div className="sidebar--static">
         <Home />
         <span>Dashboard</span>
       </div>

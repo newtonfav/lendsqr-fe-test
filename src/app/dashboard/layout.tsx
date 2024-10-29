@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import NavBar from "../components/DashboardNavbar/NavBar";
+import NavBar from "../components/Navbar/NavBar";
 import { Work_Sans } from "next/font/google";
 import Sidebar from "../components/Sidebar/Sidebar";
 
