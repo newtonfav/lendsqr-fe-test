@@ -1,0 +1,13 @@
+.button {
+  &--blacklist {
+    @include useractionbutton;
+    color: $blacklisted-text;
+    border: 1px solid $blacklisted-text;
+  }
+
+  &--activate {
+    @include useractionbutton;
+    color: $activate;
+    border: 1px solid $activate;
+  }
+}
