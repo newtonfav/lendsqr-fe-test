@@ -29,6 +29,7 @@ export default function UsersTable({ usersData }: UsersTableProps) {
               username={userName}
               dateJoined={createdAt}
               phone={phoneNumber}
+              userId={id}
             />
           )
         )}

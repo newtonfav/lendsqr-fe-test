@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 
-const ItemNumber: React.FC = () => {
-  const [selectedValue, setSelectedValue] = useState<number>(10);
+interface PageLimitProps {
+  onPageLimitChange: (query: string, value: string) => void;
+}
 
+function PageLimit({ onPageLimitChange }: PageLimitProps) {
+  const [selectedValue, setSelectedValue] = useState<number>(10);
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedValue(Number(event.target.value));
+    const newValue = Number(event.target.value);
+    setSelectedValue(newValue);
+    onPageLimitChange("limit", String(newValue));
   };
 
   return (
-    <span className="usersfooter__pagenumber--numberrr">
+    <span className="">
       <select
         value={selectedValue}
         onChange={handleSelectChange}
@@ -22,6 +27,6 @@ const ItemNumber: React.FC = () => {
       </select>
     </span>
   );
-};
+}
 
-export default ItemNumber;
+export default PageLimit;

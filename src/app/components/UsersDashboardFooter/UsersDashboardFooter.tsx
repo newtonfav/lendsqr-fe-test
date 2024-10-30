@@ -1,30 +1,35 @@
 "use client";
 import React from "react";
-// import DropDownOrg from "../icons/DropDownOrg";
-import LeftArrow from "../icons/LeftArrow";
-import RightArrow from "../icons/RightArrow";
-import ItemNumber from "../ItemNumber/ItemNumber";
+import PageLimit from "../PageLimit/PageLimit";
+import Pagination from "../Pagination/Pagination";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-export default function UsersDashboardFooter() {
+export default function UsersDashboardFooter({
+  totalUsers,
+}: {
+  totalUsers: number;
+}) {
+  const totalPages = 100 / totalUsers;
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  function updateUrlParams(query: string, value: string) {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set(query, value);
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  }
+
   return (
     <div className="usersfooter">
       <div className="usersfooter__pagenumber">
         Showing
-        <ItemNumber />
+        <PageLimit onPageLimitChange={updateUrlParams} />
         out of 100
       </div>
 
-      <div className="usersfooter__pagination">
-        <span className="usersfooter__pagination--leftarrow">
-          <LeftArrow />
-        </span>
-
-        <span className="usersfooter__pagination--pages">1 2 3 ... 15 16</span>
-
-        <span className="usersfooter__pagination--rightarrow">
-          <RightArrow />
-        </span>
-      </div>
+      <Pagination totalPages={totalPages} onPageChange={updateUrlParams} />
     </div>
   );
 }

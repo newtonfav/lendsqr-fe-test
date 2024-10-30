@@ -8,6 +8,9 @@ import UsersTable from "../../components/UsersTable/UsersTable";
 import UsersDashboardFooter from "../../components/UsersDashboardFooter/UsersDashboardFooter";
 import { IUser } from "../../utils/models/userModel";
 
+type Params = Promise<{ slug: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
 export interface IUserStats {
   Icon: FC;
   name: string;
@@ -37,13 +40,19 @@ const userstats: IUserStats[] = [
   },
 ];
 
-export default async function Users({ searchParams }) {
-  const limit = (await searchParams?.limit) ?? 10;
-  console.log(typeof limit);
+export default async function Users(props: {
+  params: Params;
+  searchParams: SearchParams;
+}) {
+  const searchParams = await props.searchParams;
+  const limit = searchParams?.limit || "10";
+  const page = searchParams?.page || "1";
 
-  const res = await fetch(`${process.env.URL}/users?page=1&limit=${limit}`);
-
+  const res = await fetch(
+    `${process.env.URL}/users?page=${page}&limit=${limit}`
+  );
   const data: IUser[] = await res.json();
+  const totalUsers = data.length;
 
   return (
     <div className="users">
@@ -56,7 +65,7 @@ export default async function Users({ searchParams }) {
 
       <UsersTable usersData={data} />
 
-      <UsersDashboardFooter />
+      <UsersDashboardFooter totalUsers={totalUsers} />
     </div>
   );
 }

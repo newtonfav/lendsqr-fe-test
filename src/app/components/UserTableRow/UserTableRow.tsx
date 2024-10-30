@@ -2,6 +2,7 @@ import React from "react";
 import ThreeDots from "../icons/ThreeDots";
 import formatDate from "../../utils/functions/formatDate";
 import getStatusFromNumericValue from "../../utils/functions/getStatusFromNumber";
+import Link from "next/link";
 
 interface IUserRow {
   organisation: string;
@@ -10,6 +11,7 @@ interface IUserRow {
   phone: string;
   dateJoined: string;
   status: string;
+  userId: string;
 }
 
 export default function UserTableRow({
@@ -19,13 +21,18 @@ export default function UserTableRow({
   phone,
   dateJoined,
   status,
+  userId,
 }: IUserRow) {
   const userStatus = getStatusFromNumericValue(status);
 
   return (
     <div className="tablerow">
-      <span className="tablerow__organisation">{organisation}</span>
-      <span className="tablerow__username">{username}</span>
+      <Link href={`users/${userId}`} className="tablerow__organisation">
+        <span className="">{organisation}</span>
+      </Link>
+      <Link href={`users/${userId}`} className="tablerow__username">
+        <span>{username}</span>
+      </Link>
       <span className="tablerow__email">{email.toLowerCase()}</span>
       <span className="tablerow__phone">{phone}</span>
       <span className="tablerow__datejoined">{formatDate(dateJoined)}</span>
