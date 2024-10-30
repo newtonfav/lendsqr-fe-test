@@ -1,16 +1,16 @@
+"use client";
 import React from "react";
-import DropDownOrg from "../icons/DropDownOrg";
+// import DropDownOrg from "../icons/DropDownOrg";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
+import ItemNumber from "../ItemNumber/ItemNumber";
 
 export default function UsersDashboardFooter() {
   return (
     <div className="usersfooter">
       <div className="usersfooter__pagenumber">
         Showing
-        <span className="usersfooter__pagenumber--number">
-          10 <DropDownOrg />
-        </span>
+        <ItemNumber />
         out of 100
       </div>
 

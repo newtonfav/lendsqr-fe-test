@@ -1,7 +1,7 @@
 import React from "react";
 import ThreeDots from "../icons/ThreeDots";
 import formatDate from "../../utils/functions/formatDate";
-import getRandomStatus from "../../utils/functions/getRandomStatus";
+import getStatusFromNumericValue from "../../utils/functions/getStatusFromNumber";
 
 interface IUserRow {
   organisation: string;
@@ -9,6 +9,7 @@ interface IUserRow {
   email: string;
   phone: string;
   dateJoined: string;
+  status: string;
 }
 
 export default function UserTableRow({
@@ -17,8 +18,9 @@ export default function UserTableRow({
   email,
   phone,
   dateJoined,
+  status,
 }: IUserRow) {
-  const status = getRandomStatus();
+  const userStatus = getStatusFromNumericValue(status);
 
   return (
     <div className="tablerow">
@@ -27,8 +29,8 @@ export default function UserTableRow({
       <span className="tablerow__email">{email.toLowerCase()}</span>
       <span className="tablerow__phone">{phone}</span>
       <span className="tablerow__datejoined">{formatDate(dateJoined)}</span>
-      <span className={`tablerow__status tablerow__status--${status}`}>
-        {status}
+      <span className={`tablerow__status tablerow__status--${userStatus}`}>
+        {userStatus}
       </span>
       <span className="tablerow__dots">
         <ThreeDots />

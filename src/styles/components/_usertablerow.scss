@@ -6,9 +6,6 @@
   padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(33, 63, 125, 0.1);
   margin-top: 1rem;
-  // white-space: nowrap;
-  // overflow: hidden;
-  text-overflow: ellipsis;
 
   &:last-child {
     border-bottom: none;
@@ -16,7 +13,11 @@
 
   &__organisation {
     text-transform: capitalize;
-    // width: 20%;
+    @include truncate;
+  }
+
+  &__email {
+    @include truncate;
   }
 
   &__status {

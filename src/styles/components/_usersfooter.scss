@@ -10,13 +10,17 @@
     gap: 0.5rem;
     align-items: center;
 
-    &--number {
+    &--dropdown {
       display: inline-flex;
       align-items: center;
       font-weight: 450;
-      gap: 1rem;
+      // gap: 1rem;
       background-color: $pagenumber-color;
-      padding: 0.2rem 0.7rem;
+      padding: 0.2rem 0.3rem;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 

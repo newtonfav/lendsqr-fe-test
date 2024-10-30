@@ -18,10 +18,12 @@ export default function UsersTable({ usersData }: UsersTableProps) {
             organisation,
             profile: { email, userName, phoneNumber },
             createdAt,
+            status,
             id,
           }) => (
             <UserTableRow
               key={id}
+              status={status}
               organisation={organisation}
               email={email}
               username={userName}

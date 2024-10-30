@@ -2,6 +2,7 @@ export interface IUser {
   createdAt: string;
   organisation: string;
   lastActiveDate: string;
+  status: string;
   profile: IUserProfile;
   guarantor: IGuarantor;
   accountBalance: number;

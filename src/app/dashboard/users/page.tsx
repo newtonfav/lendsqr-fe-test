@@ -37,12 +37,13 @@ const userstats: IUserStats[] = [
   },
 ];
 
-export default async function Users() {
-  const res = await fetch(`${process.env.URL}/users?page=1&limit=3`);
+export default async function Users({ searchParams }) {
+  const limit = (await searchParams?.limit) ?? 10;
+  console.log(typeof limit);
+
+  const res = await fetch(`${process.env.URL}/users?page=1&limit=${limit}`);
 
   const data: IUser[] = await res.json();
-
-  // console.log(data);
 
   return (
     <div className="users">
