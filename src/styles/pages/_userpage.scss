@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 2rem;
 
     h1 {
       font-weight: 400;
@@ -25,6 +26,67 @@
       display: inline-flex;
       margin-left: auto;
       gap: 1rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    box-shadow: $box-shadow;
+    padding: 2rem 1.7rem 0.1rem 1.7rem;
+    border-radius: 0.2rem;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    align-items: center;
+    color: $primary-accent;
+
+    &--profileicon {
+      background-color: $profile-color;
+      border-radius: 6rem;
+      padding: 2.6rem;
+    }
+
+    &--profile {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+    }
+
+    &--usertier {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+      color: hsla(224, 20%, 41%, 1);
+      @include sideborder;
+
+      p {
+        font-size: 0.8rem;
+        font-weight: 450;
+        margin-bottom: 0.5rem;
+      }
+
+      span {
+        align-items: center;
+        display: inline-flex;
+      }
+    }
+
+    &--balance {
+      margin-left: 2rem;
+
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 450;
+      }
+
+      span {
+        font-size: 0.7rem;
+      }
     }
   }
 }
