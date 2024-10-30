@@ -6,6 +6,7 @@ import UsersWithoans from "../../components/icons/UsersWithoans";
 import UsersWithSavings from "../../components/icons/UsersWithSavings";
 import UsersTable from "../../components/UsersTable/UsersTable";
 import UsersDashboardFooter from "../../components/UsersDashboardFooter/UsersDashboardFooter";
+import { IUser } from "../../utils/models/userModel";
 
 export interface IUserStats {
   Icon: FC;
@@ -36,7 +37,13 @@ const userstats: IUserStats[] = [
   },
 ];
 
-export default function Users() {
+export default async function Users() {
+  const res = await fetch(`${process.env.URL}/users?page=1&limit=3`);
+
+  const data: IUser[] = await res.json();
+
+  // console.log(data);
+
   return (
     <div className="users">
       <h1>Users</h1>
@@ -46,7 +53,7 @@ export default function Users() {
         ))}
       </div>
 
-      <UsersTable />
+      <UsersTable usersData={data} />
 
       <UsersDashboardFooter />
     </div>

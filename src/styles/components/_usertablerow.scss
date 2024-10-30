@@ -6,6 +6,9 @@
   padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(33, 63, 125, 0.1);
   margin-top: 1rem;
+  // white-space: nowrap;
+  // overflow: hidden;
+  text-overflow: ellipsis;
 
   &:last-child {
     border-bottom: none;
@@ -13,16 +16,32 @@
 
   &__organisation {
     text-transform: capitalize;
+    // width: 20%;
   }
 
   &__status {
-    background-color: $pending-background;
     text-transform: capitalize;
     border-radius: 5rem;
 
-    padding: 0.3rem 1.5rem;
-    color: $pending-text;
+    padding: 0.3rem 1rem;
     justify-self: start;
+
+    &--pending {
+      background-color: $pending-background;
+      color: $pending-text;
+    }
+    &--active {
+      background-color: $active-background;
+      color: $active-text;
+    }
+    &--inactive {
+      background-color: $inactive-background;
+      color: $inactive-text;
+    }
+    &--blacklisted {
+      background-color: $blacklisted-background;
+      color: $blacklisted-text;
+    }
   }
 
   &__dots {

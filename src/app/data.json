@@ -1,0 +1,41 @@
+{
+  "createdAt": "2024-10-29T00:18:19.183Z",
+  "organisation": "Balistreri, Stark and White",
+  "lastActiveDate": "2024-09-20T20:08:37.608Z",
+  "profile": {
+    "email": "Bailey_Tremblay@hotmail.com",
+    "userName": "Heber6",
+    "firstName": "Rod",
+    "lastName": "Glover",
+    "phoneNumber": "285-839-6079",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/997.jpg",
+    "gender": "Male to female transgender woman",
+    "bvn": "980116797",
+    "address": "New Opalhaven",
+    "currency": "NGN"
+  },
+  "guarantor": {
+    "firstName": "Antonette",
+    "lastName": "Lind",
+    "phoneNumber": "202-523-0142",
+    "gender": "MTF",
+    "address": "Thompsonview"
+  },
+  "accountBalance": 99609,
+  "accountNumber": "72320049",
+  "socials": {
+    "facebook": "@lendsqr",
+    "instagram": "@lendsqr",
+    "twitter": "@lendsqr"
+  },
+  "education": {
+    "level": "Bsc",
+    "employmentStatus": "Employed",
+    "sector": "FinTech",
+    "duration": "2 Years",
+    "officeEmail": "Fred.Schaden@gmail.com",
+    "monthlyIncome": [83022, 47332],
+    "loanRepayment": 34619
+  },
+  "id": "1"
+}
