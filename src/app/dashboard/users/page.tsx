@@ -15,6 +15,7 @@ export default async function Users(props: {
   const searchParams = await props.searchParams;
   const limit = searchParams?.limit || "10";
   const page = searchParams?.page || "1";
+  const firstName = searchParams?.firstName || "";
 
   const usersLength = limit as unknown as number;
 
@@ -26,7 +27,7 @@ export default async function Users(props: {
       </Suspense>
 
       <Suspense fallback={<UsersTableSkeleton />}>
-        <UsersTable limit={limit} page={page} />
+        <UsersTable limit={limit} page={page} firstName={firstName} />
       </Suspense>
 
       <UsersDashboardFooter totalUsers={usersLength} />

@@ -10,7 +10,7 @@ import formatIncomeRange from "@/src/app/utils/helpers/formatIncomeRange";
 import React from "react";
 
 export default function UserDetailsPage() {
-  const { profile, education, socials, guarantor } = useUser();
+  const { profile, education, socials, guarantor, firstName } = useUser();
   const userGender = getGenderFromNumericValue(profile.gender);
   const guarantorRelationship = getRelationshipFromNumericValue(
     guarantor.relationship
@@ -21,7 +21,7 @@ export default function UserDetailsPage() {
   const personalInfo = [
     {
       title: "full name",
-      details: `${profile.firstName} ${profile.lastName}`,
+      details: `${firstName} ${profile.lastName}`,
     },
     {
       title: "phone number",

@@ -2,24 +2,38 @@ import { ChangeEvent, useState } from "react";
 
 export type UseInput<T> = [
   T,
-  (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void,
+  (value: T | ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void,
   () => void
 ];
 
-const useInput = <T>(initial: T): UseInput<T | null> => {
+const useInput = <T>(initial: T): UseInput<T> => {
   const [value, setValue] = useState<T>(initial);
-  return [
-    value,
-    (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+
+  const handleChange = (
+    newValue: T | ChangeEvent<HTMLInputElement | HTMLSelectElement> | null
+  ) => {
+    if (
+      newValue !== null &&
+      typeof newValue === "object" &&
+      "target" in newValue
+    ) {
+      // Handle change event
       setValue(
         typeof value === "string"
-          ? (e.target.value as T)
+          ? (newValue.target.value as T)
           : (Number(
-              e.target.value.toString().length < 12 ? e.target.value : value
+              newValue.target.value.toString().length < 12
+                ? newValue.target.value
+                : value
             ) as T)
-      ),
-    () => setValue(initial),
-  ];
+      );
+    } else if (newValue !== null) {
+      // Handle direct value assignment
+      setValue(newValue);
+    }
+  };
+
+  return [value, handleChange, () => setValue(initial)];
 };
 
 export default useInput;

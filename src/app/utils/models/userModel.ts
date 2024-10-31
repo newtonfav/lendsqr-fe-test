@@ -1,5 +1,6 @@
 export interface IUser {
   createdAt: string;
+  firstName: string;
   organisation: string;
   lastActiveDate: string;
   status: string;
@@ -15,7 +16,6 @@ export interface IUser {
 export interface IUserProfile {
   email: string;
   userName: string;
-  firstName: string;
   lastName: string;
   phoneNumber: string;
   children: string;
