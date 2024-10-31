@@ -23,7 +23,7 @@ export default async function Layout({
   const res = await fetch(`${process.env.URL}/users/${userId}`);
   const data: IUser = await res.json();
 
-  const { firstName, lastName, userID } = data.profile;
+  const { lastName, userID } = data.profile;
 
   const userpageNavigation = [
     {
@@ -84,7 +84,7 @@ export default async function Layout({
 
           <div className="userpage__details--profile">
             <h1 className="userpage__details--name">
-              {firstName} {lastName}
+              {data.firstName} {lastName}
             </h1>
             <span className="userpage__details--userid">{`LSQ${userID}`}</span>
           </div>

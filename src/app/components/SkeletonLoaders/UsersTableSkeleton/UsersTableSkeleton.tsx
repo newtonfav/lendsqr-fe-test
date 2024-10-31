@@ -5,7 +5,7 @@ import ThreeDots from "../../icons/ThreeDots";
 export default function UsersTableSkeleton() {
   return (
     <div className="usertable">
-      <UserTableHeader />
+      {/* <UserTableHeader /> */}
 
       <div className="usertable__row">
         {Array.from({ length: 8 }, (_, index) => index + 1).map((index) => (

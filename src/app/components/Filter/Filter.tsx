@@ -4,7 +4,7 @@ interface FilterProps {
   label: string;
   name: string;
   type: "select" | "text" | "date";
-  options?: { value: string; label: string }[];
+  options?: string[];
   placeholder?: string;
   onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -32,10 +32,11 @@ const Filter: React.FC<FilterProps> = ({
           onChange={onChange}
           value={value}
         >
+          <option value="">Select</option>
           {options &&
             options.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
+              <option key={option} value={option}>
+                {option}
               </option>
             ))}
         </select>

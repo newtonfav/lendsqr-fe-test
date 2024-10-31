@@ -2,6 +2,9 @@ import React from "react";
 import UserTableHeader from "../UserTableHeader/UserTableHeader";
 import UserTableRow from "../UserTableRow/UserTableRow";
 import { IUser } from "../../utils/models/userModel";
+import filterOrganisationsFromUserdata from "../../utils/helpers/filterOrganisationsFromUserdata";
+import UsersTableFilter from "../UsersTableFilter/UsersTableFilter";
+import { FilterProvider } from "../../context/tableFilterContext";
 
 interface IUsersTableProps {
   limit: string | string[];
@@ -14,47 +17,27 @@ export default async function UsersTable({
   page,
   firstName,
 }: IUsersTableProps) {
-  //for testing loader
-  // await new Promise((res) => setTimeout(res, 10000));
-
   const res = await fetch(
     `${process.env.URL}/users?firstName=${firstName}&page=${page}&limit=${limit}`
   );
   const data: IUser[] | string = await res.json();
 
-  return (
-    <div className="usertable">
-      <UserTableHeader />
+  const userData = Array.isArray(data) ? data : [];
+  const organisations = Array.isArray(data)
+    ? filterOrganisationsFromUserdata(data)
+    : [];
 
-      {data === "Not found" ? (
-        <span className="usertable__notfound">User Not Found</span>
-      ) : (
-        <div className="usertable__row">
-          {Array.isArray(data) &&
-            data.map(
-              ({
-                organisation,
-                profile: { email, userName, phoneNumber, lastName },
-                createdAt,
-                firstName,
-                status,
-                id,
-              }) => (
-                <UserTableRow
-                  key={id}
-                  firstName={firstName}
-                  lastName={lastName}
-                  status={status}
-                  organisation={organisation}
-                  email={email}
-                  dateJoined={createdAt}
-                  phone={phoneNumber}
-                  userId={id}
-                />
-              )
-            )}
-        </div>
-      )}
-    </div>
+  return (
+    <FilterProvider unfilteredData={userData}>
+      <div className="usertable">
+        <UserTableHeader organisations={organisations} />
+
+        {userData.length === 0 ? (
+          <span className="usertable__notfound">User Not Found</span>
+        ) : (
+          <UsersTableFilter />
+        )}
+      </div>
+    </FilterProvider>
   );
 }

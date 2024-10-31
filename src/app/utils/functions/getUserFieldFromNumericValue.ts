@@ -13,7 +13,7 @@ export function getStatusFromNumericValue(value: string): Status {
   if (number >= 3 && number <= 5) return Status.inactive;
   if (number >= 6 && number <= 7) return Status.pending;
   if (number >= 8 && number <= 9) return Status.blacklisted;
-  else return Status.inactive;
+  return Status.inactive; // Default case
 }
 
 export function getGenderFromNumericValue(value: string): Gender {

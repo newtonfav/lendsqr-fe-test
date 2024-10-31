@@ -1,8 +1,8 @@
 export enum Status {
-  active = "active",
-  inactive = "inactive",
-  pending = "pending",
-  blacklisted = "blacklisted",
+  active = "Active",
+  inactive = "Inactive",
+  pending = "Pending",
+  blacklisted = "Blacklisted",
 }
 
 export enum Relationship {

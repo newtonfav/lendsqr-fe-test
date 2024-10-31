@@ -2,10 +2,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import FilterIcon from "../icons/Filter";
 import Filter from "../Filter/Filter";
+import { Status } from "../../utils/models/enums";
+import { useFilter } from "../../context/tableFilterContext";
+import { getNumericValueFromStatus } from "../../utils/functions/getNumericValueFromStatus";
 
 interface Header {
   name: string;
   responsive: boolean;
+}
+
+interface FilterValues {
+  organisation: string;
+  username: string;
+  email: string;
+  date: string;
+  phone: string;
+  status: string;
+}
+
+interface IUserTableHeader {
+  organisations?: string[];
 }
 
 const headers: Header[] = [
@@ -36,9 +52,47 @@ const headers: Header[] = [
   },
 ];
 
-export default function UserTableHeader() {
+export default function UserTableHeader({ organisations }: IUserTableHeader) {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
+  const { dispatch } = useFilter();
+  const [filterValues, setFilterValues] = useState<FilterValues>({
+    organisation: "",
+    username: "",
+    email: "",
+    date: "",
+    phone: "",
+    status: "",
+  });
+  const handleFilterChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFilterValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  const handleResetFilters = () => {
+    dispatch({ type: "reset" });
+    toggleFilterVisibility();
+  };
+
+  const handleFilterSubmit = () => {
+    const lowerCaseFilterValues = {
+      ...filterValues,
+      organisation: filterValues.organisation.toLowerCase(),
+      username: filterValues.username.toLowerCase(),
+      email: filterValues.email.toLowerCase(),
+      status: getNumericValueFromStatus(filterValues.status).toString(),
+    };
+
+    console.log(lowerCaseFilterValues);
+
+    dispatch({ type: "filter", payload: lowerCaseFilterValues });
+    toggleFilterVisibility();
+  };
 
   const toggleFilterVisibility = () => {
     setIsFilterVisible((prev) => !prev);
@@ -62,13 +116,6 @@ export default function UserTableHeader() {
     };
   }, []);
 
-  const handleFilterChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    // Handle the filter change logic here
-    console.log(e.target.name, e.target.value);
-  };
-
   return (
     <div className="usertableheader" ref={filterRef}>
       {headers.map(({ name }, index) => (
@@ -89,10 +136,7 @@ export default function UserTableHeader() {
             label="Organization"
             name="organisation"
             type="select"
-            options={[
-              { value: "optionvalue", label: "Select" },
-              // more options
-            ]}
+            options={organisations}
             onChange={handleFilterChange}
           />
           <Filter
@@ -126,15 +170,22 @@ export default function UserTableHeader() {
             label="Status"
             name="status"
             type="select"
-            options={[
-              { value: "optionvalue", label: "Status" },
-              // Add more status options as needed
-            ]}
+            options={Object.values(Status)}
             onChange={handleFilterChange}
           />
           <div className="filter__button">
-            <button className="filter__button--reset">Reset</button>
-            <button className="filter__button--filter">Filter</button>
+            <button
+              className="filter__button--reset"
+              onClick={handleResetFilters}
+            >
+              Reset
+            </button>
+            <button
+              className="filter__button--filter"
+              onClick={handleFilterSubmit}
+            >
+              Filter
+            </button>
           </div>
         </div>
       )}

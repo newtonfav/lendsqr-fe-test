@@ -7,6 +7,7 @@ import Link from "next/link";
 import Blacklist from "../icons/Blacklist";
 import Activate from "../icons/Activate";
 import View from "../icons/View";
+import { log } from "console";
 
 interface IUserRow {
   organisation: string;
@@ -29,7 +30,7 @@ export default function UserTableRow({
   status,
   userId,
 }: IUserRow) {
-  const userStatus = getStatusFromNumericValue(status);
+  const userStatus = getStatusFromNumericValue(status).toLowerCase();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
