@@ -19,6 +19,7 @@ import FeesAndPricing from "../icons/FeesAndPricing";
 import AuditLogs from "../icons/AuditLogs";
 import LogOut from "../icons/LogOut";
 import { FC } from "react";
+import System from "../icons/System";
 
 export interface ISectionChildren {
   Icon: FC;
@@ -165,6 +166,12 @@ const sidebarElements: Required<ISection[]> = [
         name: "Audit Logs",
         link: "/dashboard/audit-logs",
         key: "audit-logs",
+      },
+      {
+        Icon: System,
+        name: "System Messages",
+        link: "/dashboard/messages",
+        key: "system-messages",
       },
       {
         Icon: LogOut,

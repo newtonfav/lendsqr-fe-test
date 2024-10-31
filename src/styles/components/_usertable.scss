@@ -6,11 +6,8 @@
   margin-bottom: 1.5rem;
 
   &__notfound {
-    display: flex;
-    justify-content: center;
     font-size: 0.9rem;
     margin: 2rem 0;
-    font-weight: 400;
-    color: rgb(100, 99, 99);
+    @include not-found;
   }
 }

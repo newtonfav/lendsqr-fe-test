@@ -37,3 +37,11 @@
   gap: 0.5rem;
   cursor: pointer;
 }
+
+@mixin not-found {
+  display: flex;
+  justify-content: center;
+
+  font-weight: 400;
+  color: rgb(100, 99, 99);
+}

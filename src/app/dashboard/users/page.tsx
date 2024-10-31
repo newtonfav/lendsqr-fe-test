@@ -1,4 +1,4 @@
-import React, { FC, Suspense } from "react";
+import React, { Suspense } from "react";
 import UsersTable from "../../components/UsersTable/UsersTable";
 import UsersDashboardFooter from "../../components/UsersDashboardFooter/UsersDashboardFooter";
 import UsersStatics from "../../components/UsersStatistics/UsersStatistics";

@@ -2,12 +2,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import ThreeDots from "../icons/ThreeDots";
 import formatDate from "../../utils/functions/formatDate";
-import { getStatusFromNumericValue } from "../../utils/functions/getUserFieldFromNumericValue";
+import { getStatusFromApiValue } from "../../utils/functions/getUserFieldFromNumericValue";
 import Link from "next/link";
 import Blacklist from "../icons/Blacklist";
 import Activate from "../icons/Activate";
 import View from "../icons/View";
-import { log } from "console";
 
 interface IUserRow {
   organisation: string;
@@ -30,7 +29,7 @@ export default function UserTableRow({
   status,
   userId,
 }: IUserRow) {
-  const userStatus = getStatusFromNumericValue(status).toLowerCase();
+  const userStatus = getStatusFromApiValue(Number(status)).toLowerCase();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 

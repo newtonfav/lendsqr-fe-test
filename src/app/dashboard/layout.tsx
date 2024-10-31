@@ -11,6 +11,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <NavBar />
       <div className="dashboard__container">
         <Sidebar />
+
         <div className="dashboard__container--children">{children}</div>
       </div>
     </div>

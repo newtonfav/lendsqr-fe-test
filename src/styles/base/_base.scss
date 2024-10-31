@@ -4,6 +4,34 @@ body {
 }
 
 .error {
-  margin: 5rem;
+  margin: 9rem 0;
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $userdetail-header;
+}
+
+.not-found {
+  @include not-found;
+  align-items: center;
+  font-size: 1.3rem;
+  margin: 6rem 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.not-available {
+  background-color: $primary-color;
+  box-shadow: $box-shadow;
+  padding: 2rem;
+  height: 35dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $userdetail-header;
+}
+
+.navlink {
+  height: 85dvh;
 }

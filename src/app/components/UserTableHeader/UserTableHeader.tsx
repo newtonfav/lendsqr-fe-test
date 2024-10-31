@@ -2,14 +2,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import FilterIcon from "../icons/Filter";
 import Filter from "../Filter/Filter";
-import { Status } from "../../utils/models/enums";
 import { useFilter } from "../../context/tableFilterContext";
-import { getNumericValueFromStatus } from "../../utils/functions/getNumericValueFromStatus";
+import { getApiValuesForStatus } from "../../utils/functions/getNumericValueFromStatus";
 
 interface Header {
   name: string;
   responsive: boolean;
 }
+
+type Status = "inactive" | "pending" | "blacklisted" | "active";
 
 interface FilterValues {
   organisation: string;
@@ -85,9 +86,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
       organisation: filterValues.organisation.toLowerCase(),
       username: filterValues.username.toLowerCase(),
       email: filterValues.email.toLowerCase(),
-      status: getNumericValueFromStatus(
-        filterValues.status as Status
-      ).toString(),
+      status: getApiValuesForStatus(filterValues.status as Status),
     };
 
     console.log(lowerCaseFilterValues);
@@ -172,7 +171,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
             label="Status"
             name="status"
             type="select"
-            options={Object.values(Status)}
+            options={["inactive", "pending", "blacklisted", "active"]}
             onChange={handleFilterChange}
           />
           <div className="filter__button">

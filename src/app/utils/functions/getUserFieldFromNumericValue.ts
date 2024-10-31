@@ -3,18 +3,29 @@ import {
   MaritalStatus,
   Relationship,
   ResidenceType,
-  Status,
 } from "../models/enums";
 
-export function getStatusFromNumericValue(value: string): Status {
-  const number = parseInt(value);
+export type Status = "inactive" | "pending" | "blacklisted" | "active";
 
-  if (number >= 0 && number <= 2) return Status.active;
-  if (number >= 3 && number <= 5) return Status.inactive;
-  if (number >= 6 && number <= 7) return Status.pending;
-  if (number >= 8 && number <= 9) return Status.blacklisted;
-  return Status.inactive; // Default case
-}
+export const STATUS_MAP: Record<number, Status> = {
+  0: "inactive",
+  1: "inactive",
+  2: "inactive",
+  3: "pending",
+  4: "pending",
+  5: "pending",
+  6: "blacklisted",
+  7: "blacklisted",
+  8: "active",
+  9: "active",
+};
+
+export const getStatusFromApiValue = (value: number): Status => {
+  if (value < 0 || value > 9) {
+    throw new Error("Invalid API value");
+  }
+  return STATUS_MAP[value];
+};
 
 export function getGenderFromNumericValue(value: string): Gender {
   const number = parseInt(value);
