@@ -2,7 +2,6 @@ import React from "react";
 import UserTableHeader from "../UserTableHeader/UserTableHeader";
 import UserTableRow from "../UserTableRow/UserTableRow";
 import { IUser } from "../../utils/models/userModel";
-import { log } from "console";
 
 interface IUsersTableProps {
   limit: string | string[];
@@ -15,7 +14,7 @@ export default async function UsersTable({
   page,
   firstName,
 }: IUsersTableProps) {
-  //for testing
+  //for testing loader
   // await new Promise((res) => setTimeout(res, 10000));
 
   const res = await fetch(

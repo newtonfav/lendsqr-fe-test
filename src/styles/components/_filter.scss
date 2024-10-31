@@ -1,0 +1,48 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+
+  label {
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    color: $tableheader-color;
+  }
+
+  &__input {
+    border: 1px solid $pagenumber-color;
+    padding: 0.6rem 0.4rem;
+    border-radius: 0.4rem;
+    color: $tableheader-color;
+    font-weight: 300;
+    font-size: 0.8rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.8rem;
+    margin: 1rem 0;
+
+    button {
+      padding: 0.4rem 1rem;
+      border-radius: 0.5rem;
+      width: 100%;
+      font-weight: 400;
+    }
+
+    &--reset {
+      border: 0.9px solid $primary-accent;
+    }
+
+    &--filter {
+      background-color: hsla(180, 60%, 51%, 1);
+      color: white;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 @mixin grid-template {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr 1fr 1.3fr 1fr 1rem;
+  grid-template-columns: repeat(6, 1fr) 1rem;
   grid-template-rows: 2rem;
 }
 
@@ -35,4 +35,5 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }

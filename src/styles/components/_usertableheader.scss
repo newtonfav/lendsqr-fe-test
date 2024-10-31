@@ -1,6 +1,7 @@
 .usertableheader {
   @include grid-template;
   margin-bottom: 1.5rem;
+  user-select: none;
 
   &__container {
     font-size: 0.7rem;
@@ -8,10 +9,29 @@
     display: inline-flex;
     gap: 0.8rem;
     color: $tableheader-color;
+    cursor: pointer;
+
+    span {
+      position: relative;
+    }
 
     &--text {
       text-transform: uppercase;
       font-weight: 500;
+    }
+
+    &--filter {
+      padding: 0.8rem 1rem 0 0.8rem;
+      background-color: $primary-color;
+      border-radius: 0.4rem;
+      box-shadow: $box-shadow;
+
+      position: absolute;
+      border: 1px solid $pagenumber-color;
+      width: 20%;
+      top: calc(20% + 2px);
+      overflow-y: auto;
+      z-index: 50;
     }
   }
 }
