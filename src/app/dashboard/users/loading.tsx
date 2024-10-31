@@ -1,7 +1,7 @@
 import React from "react";
-import BackArrow from "../../components/icons/BackArrow";
-import ProfileIcon from "../../components/icons/ProfileIcon";
-import UnStar from "../../components/icons/UnStar";
+import BackArrow from "../../assets/icons/BackArrow";
+import ProfileIcon from "../../assets/icons/ProfileIcon";
+import UnStar from "../../assets/icons/UnStar";
 import UserPageNav from "../../components/UserPageNav/UserPageNav";
 import UserPageSkeleton from "../../components/SkeletonLoaders/UserPageSkeleton/UserPageSkeleton";
 

@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import ThreeDots from "../icons/ThreeDots";
+import ThreeDots from "../../assets/icons/ThreeDots";
 import formatDate from "../../utils/functions/formatDate";
 import { getStatusFromApiValue } from "../../utils/functions/getUserFieldFromNumericValue";
 import Link from "next/link";
-import Blacklist from "../icons/Blacklist";
-import Activate from "../icons/Activate";
-import View from "../icons/View";
+import Blacklist from "../../assets/icons/Blacklist";
+import Activate from "../../assets/icons/Activate";
+import View from "../../assets/icons/View";
 
 interface IUserRow {
   organisation: string;

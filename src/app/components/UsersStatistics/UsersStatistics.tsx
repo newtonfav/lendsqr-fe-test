@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import DashboardUsers from "../icons/DashboardUsers";
-import ActiveUsers from "../icons/ActiveUsers";
-import UsersWithoans from "../icons/UsersWithoans";
-import UsersWithSavings from "../icons/UsersWithSavings";
+import DashboardUsers from "../../assets/icons/DashboardUsers";
+import ActiveUsers from "../../assets/icons/ActiveUsers";
+import UsersWithoans from "../../assets/icons/UsersWithoans";
+import UsersWithSavings from "../../assets/icons/UsersWithSavings";
 
 export interface IUserStats {
   Icon: FC;

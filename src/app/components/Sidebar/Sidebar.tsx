@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import BriefCase from "../icons/BriefCase";
-import DropDownOrg from "../icons/DropDownOrg";
-import Home from "../icons/Home";
+import BriefCase from "../../assets/icons/BriefCase";
+import DropDownOrg from "../../assets/icons/DropDownOrg";
+import Home from "../../assets/icons/Home";
 import sidebarElements from "../SidebarElements/SidebarElements";
 import SidebarSections from "../SidebarSections/SidebarSections";
 

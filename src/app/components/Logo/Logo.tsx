@@ -1,6 +1,6 @@
 import React from "react";
-import LogoIcon from "../icons/LogoIcon";
-import LogoText from "../icons/LogoText";
+import LogoIcon from "../../assets/icons/LogoIcon";
+import LogoText from "../../assets/icons/LogoText";
 
 export default function Logo({
   sizeText,

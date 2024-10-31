@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import FilterIcon from "../icons/Filter";
+import FilterIcon from "../../assets/icons/Filter";
 import Filter from "../Filter/Filter";
 import { useFilter } from "../../context/tableFilterContext";
 import { getApiValuesForStatus } from "../../utils/functions/getNumericValueFromStatus";

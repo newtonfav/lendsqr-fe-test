@@ -3,19 +3,19 @@ import localFont from "next/font/local";
 import "@/src/styles/main.scss";
 
 const avenirNextBold = localFont({
-  src: "../fonts/AvenirNext-Bold.woff",
+  src: "./assets/fonts/AvenirNext-Bold.woff",
   variable: "--font-avenir-bold",
   weight: "700",
 });
 
 const avenirNextRegular = localFont({
-  src: "../fonts/AvenirNextLTPro-Regular.woff",
+  src: "./assets/fonts/AvenirNextLTPro-Regular.woff",
   variable: "--font-avenir-regular",
   weight: "500",
 });
 
 const avenirNextLight = localFont({
-  src: "../fonts/AvenirNextLight.woff",
+  src: "./assets/fonts/AvenirNextLight.woff",
   variable: "--font-avenir-light",
   weight: "400",
 });

@@ -8,7 +8,6 @@ import {
   Dispatch,
 } from "react";
 import { IUser } from "../utils/models/userModel";
-import { log } from "console";
 import formatDate from "../utils/functions/formatDate";
 
 interface InitialState {

@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import Profile from "../Profile/Profile";
 import { Roboto } from "next/font/google";
-import BellIcon from "../icons/BellIcon";
+import BellIcon from "../../assets/icons/BellIcon";
 
 const roboto = Roboto({ weight: "300", subsets: ["latin"] });
 

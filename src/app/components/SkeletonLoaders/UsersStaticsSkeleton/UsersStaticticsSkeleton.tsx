@@ -1,8 +1,8 @@
 import React from "react";
-import DashboardUsers from "../../icons/DashboardUsers";
-import ActiveUsers from "../../icons/ActiveUsers";
-import UsersWithoans from "../../icons/UsersWithoans";
-import UsersWithSavings from "../../icons/UsersWithSavings";
+import DashboardUsers from "../../../assets/icons/DashboardUsers";
+import ActiveUsers from "../../../assets/icons/ActiveUsers";
+import UsersWithoans from "../../../assets/icons/UsersWithoans";
+import UsersWithSavings from "../../../assets/icons/UsersWithSavings";
 
 const userstats = [
   {
@@ -30,7 +30,7 @@ export default function UsersStaticticsSkeleton() {
         <div className="userstat" key={index}>
           <Icon />
           <span className="userstat__users">{name}</span>
-          <span className="skeleton">1234</span>
+          <span className="skeleton">3</span>
         </div>
       ))}
     </div>

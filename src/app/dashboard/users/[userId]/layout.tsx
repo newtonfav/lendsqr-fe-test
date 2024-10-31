@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import BackArrow from "@/src/app/components/icons/BackArrow";
-import ProfileIcon from "@/src/app/components/icons/ProfileIcon";
-import Star from "@/src/app/components/icons/Star";
-import UnStar from "@/src/app/components/icons/UnStar";
+import BackArrow from "@/src/app/assets/icons/BackArrow";
+import ProfileIcon from "@/src/app/assets/icons/ProfileIcon";
+import Star from "@/src/app/assets/icons/Star";
+import UnStar from "@/src/app/assets/icons/UnStar";
 import Link from "next/link";
 import React from "react";
 import UserPageNav from "@/src/app/components/UserPageNav/UserPageNav";

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import adediji from "@/src/public/adediji.png";
-import DropDown from "../icons/Dropdown";
+import DropDown from "../../assets/icons/Dropdown";
 
 export default function Profile() {
   return (

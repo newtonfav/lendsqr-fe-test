@@ -1,12 +1,9 @@
 import React from "react";
-import UserTableHeader from "../../UserTableHeader/UserTableHeader";
-import ThreeDots from "../../icons/ThreeDots";
+import ThreeDots from "../../../assets/icons/ThreeDots";
 
 export default function UsersTableSkeleton() {
   return (
     <div className="usertable">
-      {/* <UserTableHeader /> */}
-
       <div className="usertable__row">
         {Array.from({ length: 8 }, (_, index) => index + 1).map((index) => (
           <div className="tablerow skeleton" key={index}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import LeftArrow from "../icons/LeftArrow";
-import RightArrow from "../icons/RightArrow";
+import LeftArrow from "../../assets/icons/LeftArrow";
+import RightArrow from "../../assets/icons/RightArrow";
 
 interface PaginationProps {
   totalPages: number;
