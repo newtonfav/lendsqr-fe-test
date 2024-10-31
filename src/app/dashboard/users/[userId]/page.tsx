@@ -1,57 +1,183 @@
-import BackArrow from "@/src/app/components/icons/BackArrow";
-import ProfileIcon from "@/src/app/components/icons/ProfileIcon";
-import Star from "@/src/app/components/icons/Star";
-import UnStar from "@/src/app/components/icons/UnStar";
-import Link from "next/link";
+"use client";
+import { useUser } from "@/src/app/context/userContext";
+import {
+  getGenderFromNumericValue,
+  getMaritalStatus,
+  getRelationshipFromNumericValue,
+  getResidenceType,
+} from "@/src/app/utils/functions/getUserFieldFromNumericValue";
+import formatIncomeRange from "@/src/app/utils/helpers/formatIncomeRange";
 import React from "react";
 
-export default function UserPage() {
+export default function UserDetailsPage() {
+  const { profile, education, socials, guarantor } = useUser();
+  const userGender = getGenderFromNumericValue(profile.gender);
+  const guarantorRelationship = getRelationshipFromNumericValue(
+    guarantor.relationship
+  );
+  const residenceType = getResidenceType(profile.residenceType);
+  const maritalStatus = getMaritalStatus(profile.maritalStatus);
+
+  const personalInfo = [
+    {
+      title: "full name",
+      details: `${profile.firstName} ${profile.lastName}`,
+    },
+    {
+      title: "phone number",
+      details: `${profile.phoneNumber}`,
+    },
+    {
+      title: "email address",
+      details: `${profile.email.toLowerCase()}`,
+    },
+    {
+      title: "bvn",
+      details: `${profile.bvn}`,
+    },
+    {
+      title: "gender",
+      details: `${userGender}`,
+    },
+    {
+      title: "marital status",
+      details: `${maritalStatus}`,
+    },
+    {
+      title: "children",
+      details: `${profile.children === "0" ? "None" : profile.children}`,
+    },
+    {
+      title: "type of residence",
+      details: `${residenceType}`,
+    },
+  ];
+
+  const educationAndEmployment = [
+    {
+      title: "level of education",
+      details: `${education.level}`,
+    },
+    {
+      title: "employment status",
+      details: `${education.employmentStatus}`,
+    },
+    {
+      title: "sector of employment",
+      details: `${education.sector}`,
+    },
+    {
+      title: "duration of employment",
+      details: `${education.duration}`,
+    },
+    {
+      title: "office email",
+      details: `${education.officeEmail.toLowerCase()}`,
+    },
+    {
+      title: "monthly income",
+      details: `${formatIncomeRange(education.monthlyIncome)}`,
+    },
+    {
+      title: "loan repayment",
+      details: `₦${education.loanRepayment.toLocaleString()}`,
+    },
+  ];
+
+  const socialDetails = [
+    {
+      title: "twitter",
+      details: `${socials.twitter}`,
+    },
+    {
+      title: "facebook",
+      details: `${socials.facebook}`,
+    },
+    {
+      title: "instagram",
+      details: `${socials.instagram}`,
+    },
+  ];
+
+  const guarantorDetails = [
+    {
+      title: "full name",
+      details: `${guarantor.firstName} ${guarantor.lastName}`,
+    },
+    {
+      title: "phone number",
+      details: `${guarantor.phoneNumber}`,
+    },
+    {
+      title: "email address",
+      details: `${guarantor.email.toLowerCase()}`,
+    },
+    {
+      title: "relationship",
+      details: `${guarantorRelationship}`,
+    },
+  ];
+
   return (
-    <div className="userpage">
-      <Link href="/dashboard/users">
-        <div className="userpage__back">
-          <BackArrow />
-          <span>Back to Users</span>
+    <div className="userdetailspage">
+      {/* personalInfo */}
+      <div className="userdetailspage__details">
+        <div className="userdetailspage__details--header">
+          Personal Information
         </div>
-      </Link>
 
-      <div className="userpage__heading">
-        <h1>User Details</h1>
-
-        <div className="userpage__heading--buttons">
-          <button className="button--blacklist">Blacklist User</button>
-          <button className="button--activate">Activate User</button>
+        <div className="details__container">
+          {personalInfo.map(({ title, details }, index) => (
+            <div className="details__info" key={index}>
+              <h2>{title}</h2>
+              <span>{details}</span>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="userpage__container">
-        <div className="userpage__details">
-          <div className="userpage__details--profileicon">
-            <ProfileIcon />
-          </div>
-
-          <div className="userpage__details--profile">
-            <h1 className="userpage__details--name">Grace Effiom</h1>
-            <span className="userpage__details--userid">LSQFf587g90</span>
-          </div>
-
-          <div className="userpage__details--usertier">
-            <p>User's Tier</p>
-            <span>
-              <Star />
-              {Array.from([1, 2]).map((index) => (
-                <UnStar key={index} />
-              ))}
-            </span>
-          </div>
-
-          <div className="userpage__details--balance">
-            <h3 className="">₦200,000.00</h3>
-            <span>9912345678/Providus Bank</span>
-          </div>
+      {/* education and employment */}
+      <div className="userdetailspage__details">
+        <div className="userdetailspage__details--header">
+          Education and Employment
         </div>
 
-        <div>section</div>
+        <div className="details__container">
+          {educationAndEmployment.map(({ title, details }, index) => (
+            <div className="details__info" key={index}>
+              <h2>{title}</h2>
+              <span>{details}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* socials */}
+      <div className="userdetailspage__details">
+        <div className="userdetailspage__details--header">Socials</div>
+
+        <div className="details__container">
+          {socialDetails.map(({ title, details }, index) => (
+            <div className="details__info" key={index}>
+              <h2>{title}</h2>
+              <span>{details}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* gurantor */}
+      <div className="userdetailspage__details">
+        <div className="userdetailspage__details--header">Guarantor</div>
+
+        <div className="details__container">
+          {guarantorDetails.map(({ title, details }, index) => (
+            <div className="details__info" key={index}>
+              <h2>{title}</h2>
+              <span>{details}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

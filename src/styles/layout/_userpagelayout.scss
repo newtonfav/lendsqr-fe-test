@@ -34,7 +34,7 @@
     flex-direction: column;
     background-color: $primary-color;
     box-shadow: $box-shadow;
-    padding: 2rem 1.7rem 0.1rem 1.7rem;
+    padding: 2rem 1.7rem 0rem 1.7rem;
     border-radius: 0.2rem;
   }
 
@@ -88,5 +88,17 @@
         font-size: 0.7rem;
       }
     }
+
+    &--nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__children {
+    padding: 2rem 0;
   }
 }

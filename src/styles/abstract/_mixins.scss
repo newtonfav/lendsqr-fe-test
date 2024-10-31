@@ -1,6 +1,6 @@
 @mixin grid-template {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr 1fr 1.3fr 1fr 0.1fr;
+  grid-template-columns: 1fr 1fr 1.2fr 1fr 1.3fr 1fr 1rem;
   grid-template-rows: 2rem;
 }
 
@@ -8,6 +8,7 @@
   background-color: $pagenumber-color;
   padding: 0.4rem 0.7rem;
   border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 @mixin truncate {
