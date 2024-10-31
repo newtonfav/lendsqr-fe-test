@@ -30,3 +30,9 @@
   border-right: 1px solid hsla(224, 20%, 41%, 0.2);
   border-left: 1px solid hsla(224, 20%, 41%, 0.2);
 }
+
+@mixin tablerow-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}

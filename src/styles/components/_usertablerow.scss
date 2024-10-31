@@ -48,5 +48,32 @@
   &__dots {
     cursor: pointer;
     justify-self: end;
+    position: relative;
+  }
+
+  &__menu {
+    flex-direction: column;
+    background-color: $primary-color;
+    box-shadow: $box-shadow;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    position: absolute;
+    top: calc(60% + 2px);
+    right: 5.8rem;
+    z-index: 50;
+
+    &--view {
+      @include tablerow-menu;
+    }
+
+    &--blacklist {
+      @include tablerow-menu;
+    }
+
+    &--activate {
+      @include tablerow-menu;
+    }
   }
 }
