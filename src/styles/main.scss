@@ -9,17 +9,19 @@
 @import "base/typography";
 
 @import "layout/dashboard";
+@import "layout/userpagelayout";
 
 @import "pages/login";
 @import "pages/users";
-@import "pages/userpage";
+@import "pages/userdetailspage";
 
 @import "components/input";
 @import "components/logo";
 @import "components/navbar";
 @import "components/sidebar";
-@import "components/userstats";
+@import "components/userstatistics";
 @import "components/usertable";
 @import "components/usertableheader";
 @import "components/usertablerow";
 @import "components/usersfooter";
+@import "components/userpagenav";

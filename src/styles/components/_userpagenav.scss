@@ -1,0 +1,8 @@
+.userpage__nav {
+  padding: 0.4rem 1rem;
+
+  &--active {
+    border-bottom: 2px solid $sidebar-border-active;
+    color: $sidebar-border-active;
+  }
+}

@@ -18,11 +18,15 @@ export interface IUserProfile {
   firstName: string;
   lastName: string;
   phoneNumber: string;
+  children: string;
   avatar: string;
   gender: string;
   bvn: string;
   address: string;
   currency: string;
+  userID: string;
+  residenceType: string;
+  maritalStatus: string;
 }
 
 export interface IGuarantor {
@@ -31,6 +35,8 @@ export interface IGuarantor {
   phoneNumber: string;
   gender: string;
   address: string;
+  email: string;
+  relationship: string;
 }
 
 export interface ISocial {

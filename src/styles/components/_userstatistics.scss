@@ -1,3 +1,9 @@
+.userstatistics {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
 .userstat {
   background-color: $primary-color;
   box-shadow: $box-shadow;
