@@ -85,7 +85,9 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
       organisation: filterValues.organisation.toLowerCase(),
       username: filterValues.username.toLowerCase(),
       email: filterValues.email.toLowerCase(),
-      status: getNumericValueFromStatus(filterValues.status).toString(),
+      status: getNumericValueFromStatus(
+        filterValues.status as Status
+      ).toString(),
     };
 
     console.log(lowerCaseFilterValues);
