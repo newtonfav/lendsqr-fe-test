@@ -8,6 +8,8 @@ import {
   Dispatch,
 } from "react";
 import { IUser } from "../utils/models/userModel";
+import { log } from "console";
+import formatDate from "../utils/functions/formatDate";
 
 interface InitialState {
   organisation: string;
@@ -34,16 +36,16 @@ const FilterContext = createContext<FilterContextType | null>(null);
 const initialState: InitialState = {
   organisation: "",
   username: "",
+  status: "",
   email: "",
   date: "",
   phone: "",
-  status: "",
 };
 
 function reducer(state: InitialState, action: Action) {
   switch (action.type) {
     case "filter":
-      return { ...state, ...action.payload };
+      return { ...initialState, ...action.payload };
     case "reset":
       return { ...initialState };
     default:
@@ -85,7 +87,7 @@ function FilterProvider({
           ? user.profile.email.toLowerCase().includes(filterValues.email)
           : true) &&
         (filterValues.date
-          ? user.createdAt.includes(filterValues.date)
+          ? formatDate(user.createdAt).includes(filterValues.date)
           : true) &&
         (filterValues.phone
           ? user.profile.phoneNumber.includes(filterValues.phone)

@@ -4,6 +4,7 @@ import FilterIcon from "../icons/Filter";
 import Filter from "../Filter/Filter";
 import { useFilter } from "../../context/tableFilterContext";
 import { getApiValuesForStatus } from "../../utils/functions/getNumericValueFromStatus";
+import formatDate from "../../utils/functions/formatDate";
 
 interface Header {
   name: string;
@@ -53,18 +54,21 @@ const headers: Header[] = [
   },
 ];
 
+const initialFilter = {
+  organisation: "",
+  username: "",
+  email: "",
+  date: "",
+  phone: "",
+  status: "",
+};
+
 export default function UserTableHeader({ organisations }: IUserTableHeader) {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
   const { dispatch } = useFilter();
-  const [filterValues, setFilterValues] = useState<FilterValues>({
-    organisation: "",
-    username: "",
-    email: "",
-    date: "",
-    phone: "",
-    status: "",
-  });
+  const [filterValues, setFilterValues] = useState<FilterValues>(initialFilter);
+
   const handleFilterChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -76,6 +80,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
   };
 
   const handleResetFilters = () => {
+    setFilterValues(initialFilter);
     dispatch({ type: "reset" });
     toggleFilterVisibility();
   };
@@ -86,10 +91,11 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
       organisation: filterValues.organisation.toLowerCase(),
       username: filterValues.username.toLowerCase(),
       email: filterValues.email.toLowerCase(),
-      status: getApiValuesForStatus(filterValues.status as Status),
+      date: formatDate(filterValues.date),
+      status: filterValues.status
+        ? getApiValuesForStatus(filterValues.status as unknown as Status)
+        : "",
     };
-
-    console.log(lowerCaseFilterValues);
 
     dispatch({ type: "filter", payload: lowerCaseFilterValues });
     toggleFilterVisibility();
