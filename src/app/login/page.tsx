@@ -46,7 +46,13 @@ export default function Login() {
         </div>
 
         <div className="login__left--avatar">
-          <Image src={pablo} alt="left" width={700} priority />
+          <Image
+            className="login__left--image"
+            src={pablo}
+            alt="left"
+            width={700}
+            priority
+          />
         </div>
       </div>
 
@@ -62,7 +68,7 @@ export default function Login() {
             placeholder="Email"
             value={String(email)}
             setValue={setEmail}
-            errorMessage="Please enter a valid email"
+            errorMessage="Enter a valid email"
             clearValue={clearEmail}
             type="text"
             error={emailError}
@@ -75,7 +81,7 @@ export default function Login() {
             setValue={setPassword}
             clearValue={clearPassword}
             error={passwordError}
-            errorMessage="Password must include an uppercase letter, lowercase letter, number, and special character."
+            errorMessage="Password must be at least 8 characters!"
           />
           <span className="">Forgot Password?</span>
           <button>Log in</button>

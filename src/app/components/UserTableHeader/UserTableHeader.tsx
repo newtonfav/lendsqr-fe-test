@@ -91,7 +91,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
       organisation: filterValues.organisation.toLowerCase(),
       username: filterValues.username.toLowerCase(),
       email: filterValues.email.toLowerCase(),
-      date: formatDate(filterValues.date),
+      date: filterValues.date ? formatDate(filterValues.date) : "",
       status: filterValues.status
         ? getApiValuesForStatus(filterValues.status as unknown as Status)
         : "",
