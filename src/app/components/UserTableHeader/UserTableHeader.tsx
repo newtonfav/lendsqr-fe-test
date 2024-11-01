@@ -6,11 +6,6 @@ import { useFilter } from "../../context/tableFilterContext";
 import { getApiValuesForStatus } from "../../utils/functions/getNumericValueFromStatus";
 import formatDate from "../../utils/functions/formatDate";
 
-interface Header {
-  name: string;
-  responsive: boolean;
-}
-
 type Status = "inactive" | "pending" | "blacklisted" | "active";
 
 interface FilterValues {
@@ -26,32 +21,13 @@ interface IUserTableHeader {
   organisations?: string[];
 }
 
-const headers: Header[] = [
-  {
-    name: "organisation",
-    responsive: false,
-  },
-  {
-    name: "username",
-    responsive: true,
-  },
-  {
-    name: "email",
-    responsive: true,
-  },
-
-  {
-    name: "phone number",
-    responsive: false,
-  },
-  {
-    name: "date joined",
-    responsive: false,
-  },
-  {
-    name: "status",
-    responsive: true,
-  },
+const headers: string[] = [
+  "organisation",
+  "username",
+  "email",
+  "phone number",
+  "date joined",
+  "status",
 ];
 
 const initialFilter = {
@@ -125,10 +101,12 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
 
   return (
     <div className="usertableheader" ref={filterRef}>
-      {headers.map(({ name }, index) => (
+      {headers.map((name, index) => (
         <div
           key={index}
-          className="usertableheader__container"
+          className={`usertableheader__container usertableheader__${
+            name.split(" ")[0]
+          }`}
           onClick={toggleFilterVisibility}
         >
           <div className="usertableheader__container--text">{name}</div>

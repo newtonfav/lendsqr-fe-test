@@ -7,7 +7,16 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 3px 8px 20px rgba(0, 0, 0, 0.04);
-  z-index: 50;
+  z-index: 60;
+  position: relative;
+
+  @include respond(tab-land) {
+    padding: 0.7rem 2rem;
+  }
+
+  @include respond(small-phone) {
+    padding: 1rem 2rem;
+  }
 
   &__section {
     display: flex;
@@ -24,6 +33,64 @@
     &--bell {
       cursor: pointer;
     }
+
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include respond(tab-land) {
+      display: flex;
+    }
+  }
+
+  &__sidebar {
+    display: none;
+
+    @include respond(tab-land) {
+      display: flex;
+      position: absolute;
+      z-index: 40;
+      padding: 2rem 0;
+      background-color: $primary-color;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 90dvh;
+      font-size: 0.8rem;
+
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      box-shadow: -10px 0 15px -5px rgba(0, 0, 0, 0.04);
+
+      top: 4.8rem;
+      left: 70%;
+      width: 30%;
+
+      &.active {
+        opacity: 1;
+        animation: slideIn 0.3s forwards;
+      }
+
+      &.inactive {
+        animation: slideOut 0.3s forwards;
+      }
+    }
+
+    @include respond(mini-tab) {
+      width: 40%;
+      left: 60%;
+    }
+
+    @include respond(small-phone) {
+      width: 50%;
+      left: 50%;
+      top: 3.5rem;
+    }
   }
 
   &__search {
@@ -31,6 +98,18 @@
       flex-basis: 30%;
       align-items: center;
       display: inline-flex;
+
+      @include respond(tab-port) {
+        flex-basis: 40%;
+      }
+
+      @include respond(phone) {
+        flex-basis: 55%;
+      }
+
+      @include respond(small-phone) {
+        display: none;
+      }
     }
 
     &--input {
@@ -40,6 +119,10 @@
       margin-bottom: 0;
 
       border-radius: 0.6rem 0rem 0rem 0.6rem;
+
+      @media (max-width: 800px) {
+        padding: 0.5rem 0rem 0.5rem 0.5rem;
+      }
     }
 
     &--button {

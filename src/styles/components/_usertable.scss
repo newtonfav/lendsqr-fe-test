@@ -5,6 +5,10 @@
 
   margin-bottom: 1.5rem;
 
+  @include respond(phone) {
+    padding: 1rem;
+  }
+
   &__notfound {
     font-size: 0.9rem;
     margin: 2rem 0;

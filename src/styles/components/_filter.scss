@@ -3,11 +3,27 @@
   flex-direction: column;
   margin-bottom: 0.8rem;
 
+  @include respond(tab-port) {
+    margin-bottom: 0.2rem;
+  }
+
   label {
     font-weight: 400;
     font-size: 0.8rem;
     margin-bottom: 0.3rem;
     color: $tableheader-color;
+  }
+
+  &__username {
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    @include respond(tab-land) {
+      display: none;
+    }
   }
 
   &__input {

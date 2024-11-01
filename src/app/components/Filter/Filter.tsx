@@ -10,6 +10,7 @@ interface FilterProps {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
   value?: string;
+  className?: string;
 }
 
 const Filter: React.FC<FilterProps> = ({
@@ -23,7 +24,9 @@ const Filter: React.FC<FilterProps> = ({
 }) => {
   return (
     <div className="filter">
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name} className={`filter__${name}`}>
+        {label}
+      </label>
       {type === "select" ? (
         <select
           className="filter__input"
@@ -45,7 +48,7 @@ const Filter: React.FC<FilterProps> = ({
           type={type}
           placeholder={placeholder}
           name={name}
-          className="filter__input"
+          className={`filter__input filter__${name}`}
           onChange={onChange}
           value={value}
         />

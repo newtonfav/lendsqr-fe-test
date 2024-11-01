@@ -30,7 +30,7 @@ export default function UsersStaticticsSkeleton() {
         <div className="userstat" key={index}>
           <Icon />
           <span className="userstat__users">{name}</span>
-          <span className="skeleton">3</span>
+          <div className="skeleton">0</div>
         </div>
       ))}
     </div>

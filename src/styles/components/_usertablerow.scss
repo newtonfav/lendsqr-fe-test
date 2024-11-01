@@ -14,9 +14,29 @@
   &__organisation {
     text-transform: capitalize;
     @include truncate;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__datejoined {
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    @include respond(mini-tab) {
+      display: none;
+    }
   }
 
   &__email {
+    @include truncate;
+  }
+
+  &__username {
     @include truncate;
   }
 
@@ -42,6 +62,11 @@
     &--blacklisted {
       background-color: $blacklisted-background;
       color: $blacklisted-text;
+    }
+
+    @include respond(phone) {
+      padding: 0.2rem 0.8rem;
+      font-size: 0.6rem;
     }
   }
 

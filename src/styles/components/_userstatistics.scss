@@ -2,6 +2,19 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
+
+  @include respond(tab-land) {
+    gap: 1.5rem;
+  }
+
+  @include respond(tab-port) {
+    gap: 1.3rem;
+  }
+
+  @media (max-width: 800px) {
+    margin-top: 2rem;
+    overflow-x: scroll;
+  }
 }
 
 .userstat {
@@ -10,7 +23,7 @@
   padding: 1.5rem 8rem 1.5rem 1.5rem;
   width: 23%;
   display: flex;
-  z-index: 50;
+  z-index: 20;
   flex-direction: column;
   gap: 0.4rem;
   margin-bottom: 2rem;
@@ -19,15 +32,27 @@
     margin-bottom: 0.6rem;
   }
 
+  @include respond(mini-tab) {
+    padding: 1.5rem 10rem 1.5rem 1.5rem;
+  }
+
   &__users {
     font-size: 0.7rem;
     text-transform: uppercase;
     width: max-content;
+
+    @include respond(tab-port) {
+      font-size: 0.6rem;
+    }
   }
 
   &__number {
     color: $primary-accent;
     font-size: 1.8rem;
     font-weight: 500;
+
+    @include respond(tab-port) {
+      font-size: 1.5rem;
+    }
   }
 }

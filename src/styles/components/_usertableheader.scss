@@ -11,6 +11,11 @@
     color: $tableheader-color;
     cursor: pointer;
 
+    @include respond(tab-port) {
+      gap: 0.5rem;
+      font-size: 0.6rem;
+    }
+
     span {
       position: relative;
     }
@@ -32,6 +37,42 @@
       top: calc(20% + 2px);
       overflow-y: auto;
       z-index: 50;
+
+      @include respond(tab-land) {
+        width: 25%;
+        top: 33%;
+      }
+
+      @include respond(tab-port) {
+        width: 30%;
+      }
+
+      @include respond(phone) {
+        top: 45%;
+        width: 50%;
+      }
+
+      @include respond(small-phone) {
+        width: 55%;
+      }
+    }
+  }
+
+  &__date {
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    @include respond(mini-tab) {
+      display: none;
+    }
+  }
+
+  &__organisation {
+    @include respond(phone) {
+      display: none;
     }
   }
 }

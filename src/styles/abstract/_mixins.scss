@@ -2,6 +2,18 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr) 1rem;
   grid-template-rows: 2rem;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(5, 1fr) 1rem;
+  }
+
+  @include respond(mini-tab) {
+    grid-template-columns: repeat(4, 1fr) 1rem;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1.5fr 2fr 1fr 1rem;
+  }
 }
 
 @mixin pagination-arrows {
@@ -16,6 +28,18 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @include respond(tab-port) {
+    width: 60%;
+  }
+
+  @include respond(mini-tab) {
+    width: 80%;
+  }
+
+  @include respond(phone) {
+    width: 90%;
+  }
 }
 
 @mixin useractionbutton {
@@ -49,23 +73,41 @@
 //MEDIA Queries
 /* 
 0 - 600px: Phone
-600 - 900px: Tablet Portrait
+500 - 600px: Small Phone
+600 - 700px: Mini Tabs
+600 - 700px: Tablet Portrait
 900 - 1200px: Tablet Landscape 
 1200 - 1800px: Desktop
 1800px - * : Big Desktop😁
 
 
 Breakpoints 
+- small-phone
 - phone
+- mini-tab
 - tab-port
 - tab-land
 - big-desktop
 */
 
 @mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media (max-width: 31.25em) {
+      //500px
+      @content;
+    }
+  }
+
   @if $breakpoint == phone {
     @media (max-width: 37.5em) {
       //600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == mini-tab {
+    @media (max-width: 43.75em) {
+      //700px
       @content;
     }
   }

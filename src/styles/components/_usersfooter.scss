@@ -6,6 +6,10 @@
   align-items: center;
   user-select: none;
 
+  @include respond(small-phone) {
+    justify-content: center;
+  }
+
   &__pagenumber {
     display: inline-flex;
     gap: 0.5rem;
@@ -22,6 +26,10 @@
         outline: none;
       }
     }
+
+    @include respond(small-phone) {
+      display: none;
+    }
   }
 
   &__pagination {
@@ -33,6 +41,10 @@
     &--page {
       display: inline-flex;
       margin: 0 0.5rem;
+
+      @include respond(small-phone) {
+        margin: 0 1rem;
+      }
     }
 
     &--pages {
@@ -45,6 +57,11 @@
 
     &--rightarrow {
       @include pagination-arrows;
+    }
+
+    @include respond(small-phone) {
+      margin-left: 0;
+      gap: 2rem;
     }
   }
 }
