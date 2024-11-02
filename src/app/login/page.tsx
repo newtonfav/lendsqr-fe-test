@@ -40,12 +40,12 @@ export default function Page() {
 
   return (
     <div className="login">
-      <div className="login__left">
+      <div className="login__left" data-testid="login__left">
         <div className="login__left--logo">
           <Logo />
         </div>
 
-        <div className="login__left--avatar">
+        <div className="login__left--avatar" data-testid="login__left--avatar">
           <Image
             className="login__left--image"
             src={pablo}
@@ -56,7 +56,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="login__right">
+      <div className="login__right" data-testid="login__right">
         <div className="login__right--text">
           <h2 className="">Welcome!</h2>
           <p>Enter details to login</p>
