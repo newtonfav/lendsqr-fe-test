@@ -1,5 +1,5 @@
 "use client";
-import { useUser } from "@/src/app/context/user-context";
+import { useUser } from "@/src/app/contexts/user-context";
 import {
   getGenderFromNumericValue,
   getMaritalStatus,

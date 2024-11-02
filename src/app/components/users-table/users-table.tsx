@@ -4,7 +4,7 @@ import UserTableRow from "../user-table-row/user-table-row";
 import { IUser } from "../../utils/models/userModel";
 import filterOrganisationsFromUserdata from "../../utils/helpers/filterOrganisationsFromUserdata";
 import UsersTableFilter from "../users-table-filter/users-table-filter";
-import { FilterProvider } from "../../context/table-filter-context";
+import { FilterProvider } from "../../contexts/table-filter-context";
 
 interface IUsersTableProps {
   limit: string | string[];

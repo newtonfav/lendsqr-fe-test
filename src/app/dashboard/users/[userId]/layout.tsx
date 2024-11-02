@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 import UserPageNav from "@/src/app/components/user-page-nav/user-page-nav";
 import { IUser } from "@/src/app/utils/models/userModel";
-import { UserProvider } from "@/src/app/context/user-context";
+import { UserProvider } from "@/src/app/contexts/user-context";
 
 type Params = Promise<{ userId: string }>;
 

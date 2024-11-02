@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import UserTableRow from "../user-table-row/user-table-row";
-import { useFilter } from "../../context/table-filter-context";
+import { useFilter } from "../../contexts/table-filter-context";
 
 export default function UsersTableFilter() {
   const { filteredData } = useFilter();

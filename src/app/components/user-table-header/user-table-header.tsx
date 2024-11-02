@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import FilterIcon from "../../assets/icons/filter";
 import Filter from "../filter/filter";
-import { useFilter } from "../../context/table-filter-context";
+import { useFilter } from "../../contexts/table-filter-context";
 import { getApiValuesForStatus } from "../../utils/functions/getNumericValueFromStatus";
 import formatDate from "../../utils/functions/formatDate";
 
