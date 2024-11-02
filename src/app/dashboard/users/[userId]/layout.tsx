@@ -5,9 +5,9 @@ import Star from "@/src/app/assets/icons/star";
 import UnStar from "@/src/app/assets/icons/unstar";
 import Link from "next/link";
 import React from "react";
-import UserPageNav from "@/src/app/components/user-page-nav/user-page-nav";
 import { IUser } from "@/src/app/utils/models/userModel";
 import { UserProvider } from "@/src/app/contexts/user-context";
+import UserPageNav from "@/src/app/components/user-page-nav";
 
 type Params = Promise<{ userId: string }>;
 

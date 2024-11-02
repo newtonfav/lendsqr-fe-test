@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Filter() {
+export default function FilterIcon() {
   return (
     <svg
       width="16"

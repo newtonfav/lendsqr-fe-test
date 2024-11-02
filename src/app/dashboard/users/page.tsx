@@ -1,9 +1,9 @@
 import React, { Suspense } from "react";
-import UsersTable from "../../components/users-table/users-table";
-import UsersDashboardFooter from "../../components/users-dashboard-footer/users-dashboard-footer";
-import UsersStatics from "../../components/users-statistics/users-statistics";
-import UsersStaticticsSkeleton from "../../components/skeleton-loaders/users-statics-skeleton/users-statictics-skeleton";
-import UsersTableSkeleton from "../../components/skeleton-loaders/users-table-skeleton/users-table-skeleton";
+import UsersTable from "../../components/users-table";
+import UsersDashboardFooter from "../../components/users-dashboard-footer";
+import UsersStaticticsSkeleton from "../../components/skeleton-loaders/users-statictics-skeleton";
+import UsersTableSkeleton from "../../components/skeleton-loaders/users-table-skeleton";
+import UsersStatistics from "../../components/users-statistics";
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -23,7 +23,7 @@ export default async function Page(props: {
     <div className="users">
       <h1>Users</h1>
       <Suspense fallback={<UsersStaticticsSkeleton />}>
-        <UsersStatics />
+        <UsersStatistics />
       </Suspense>
 
       <Suspense fallback={<UsersTableSkeleton />}>

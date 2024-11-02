@@ -2,8 +2,7 @@ import React from "react";
 import BackArrow from "../../assets/icons/back-arrow";
 import ProfileIcon from "../../assets/icons/profile-icon";
 import UnStar from "../../assets/icons/unstar";
-import UserPageNav from "../../components/user-page-nav/user-page-nav";
-import UserPageSkeleton from "../../components/skeleton-loaders/user-page-skeleton/user-page-skeleton";
+import UserPageSkeleton from "../../components/skeleton-loaders/user-page-skeleton";
 
 const userpageNavigation = [
   {
