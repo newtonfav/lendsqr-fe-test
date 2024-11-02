@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
-import BackArrow from "@/src/app/assets/icons/BackArrow";
-import ProfileIcon from "@/src/app/assets/icons/ProfileIcon";
-import Star from "@/src/app/assets/icons/Star";
-import UnStar from "@/src/app/assets/icons/UnStar";
+import BackArrow from "@/src/app/assets/icons/back-arrow";
+import ProfileIcon from "@/src/app/assets/icons/profile-icon";
+import Star from "@/src/app/assets/icons/star";
+import UnStar from "@/src/app/assets/icons/unstar";
 import Link from "next/link";
 import React from "react";
-import UserPageNav from "@/src/app/components/UserPageNav/UserPageNav";
+import UserPageNav from "@/src/app/components/user-page-nav/user-page-nav";
 import { IUser } from "@/src/app/utils/models/userModel";
-import { UserProvider } from "@/src/app/context/userContext";
+import { UserProvider } from "@/src/app/context/user-context";
 
 type Params = Promise<{ userId: string }>;
 

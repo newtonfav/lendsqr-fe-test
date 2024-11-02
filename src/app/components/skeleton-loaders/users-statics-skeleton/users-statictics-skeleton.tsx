@@ -1,8 +1,8 @@
 import React from "react";
-import DashboardUsers from "../../../assets/icons/DashboardUsers";
-import ActiveUsers from "../../../assets/icons/ActiveUsers";
-import UsersWithoans from "../../../assets/icons/UsersWithoans";
-import UsersWithSavings from "../../../assets/icons/UsersWithSavings";
+import DashboardUsers from "../../../assets/icons/dashboard-users";
+import ActiveUsers from "../../../assets/icons/active-users";
+import UsersWithoans from "../../../assets/icons/users-with-loans";
+import UsersWithSavings from "../../../assets/icons/users-with-savings";
 
 const userstats = [
   {

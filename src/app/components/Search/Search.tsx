@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
-import Input from "../Input/Input";
+import Input from "../input/input";
 import useInput from "../../utils/hooks/useInput";
-import SearchIcon from "../../assets/icons/SearchIcon";
+import SearchIcon from "../../assets/icons/search-icon";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function Search() {

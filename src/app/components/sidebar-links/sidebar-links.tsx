@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import NavLink from "../NavLink/NavLink";
+import NavLink from "../navlink/navlink";
 
 interface ISidebarLinks {
   children: ReactNode;

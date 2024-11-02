@@ -1,0 +1,16 @@
+.layout {
+  &__logo {
+    display: none;
+
+    @include respond(phone) {
+      padding: 1rem;
+      background-color: #fdfdfd;
+      margin-left: 1rem;
+      margin-top: 1rem;
+      display: flex;
+
+      gap: 0.5rem;
+      display: inline-flex;
+    }
+  }
+}

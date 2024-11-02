@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import BriefCase from "../../assets/icons/BriefCase";
-import DropDownOrg from "../../assets/icons/DropDownOrg";
-import Home from "../../assets/icons/Home";
-import sidebarElements from "../SidebarElements/SidebarElements";
-import SidebarSections from "../SidebarSections/SidebarSections";
+import BriefCase from "../../assets/icons/brief-case";
+import DropDownOrg from "../../assets/icons/dropdown-org";
+import Home from "../../assets/icons/home";
+import sidebarElements from "../sidebar-elements/sidebar-elements";
+import SidebarSections from "../sidebar-sections/sidebar-sections";
 
 export default function Sidebar() {
   return (

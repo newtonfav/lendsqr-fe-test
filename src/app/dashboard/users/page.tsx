@@ -1,14 +1,14 @@
 import React, { Suspense } from "react";
-import UsersTable from "../../components/UsersTable/UsersTable";
-import UsersDashboardFooter from "../../components/UsersDashboardFooter/UsersDashboardFooter";
-import UsersStatics from "../../components/UsersStatistics/UsersStatistics";
-import UsersStaticticsSkeleton from "../../components/SkeletonLoaders/UsersStaticsSkeleton/UsersStaticticsSkeleton";
-import UsersTableSkeleton from "../../components/SkeletonLoaders/UsersTableSkeleton/UsersTableSkeleton";
+import UsersTable from "../../components/users-table/users-table";
+import UsersDashboardFooter from "../../components/users-dashboard-footer/users-dashboard-footer";
+import UsersStatics from "../../components/users-statistics/users-statistics";
+import UsersStaticticsSkeleton from "../../components/skeleton-loaders/users-statics-skeleton/users-statictics-skeleton";
+import UsersTableSkeleton from "../../components/skeleton-loaders/users-table-skeleton/users-table-skeleton";
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-export default async function Users(props: {
+export default async function Page(props: {
   params: Params;
   searchParams: SearchParams;
 }) {

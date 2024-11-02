@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import NavLink from "../NavLink/NavLink";
+import NavLink from "../navlink/navlink";
 
 interface IUserPageNav {
   link: string;

@@ -4,13 +4,13 @@ import React, { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import pablo from "@/src/public/pablo-avatar.png";
-import Input from "../components/Input/Input";
+import Input from "../components/input/input";
 import useInput from "../utils/hooks/useInput";
 import isEmail from "../utils/functions/validateEmail";
 import isPassword from "../utils/functions/validatePassword";
-import Logo from "../components/Logo/Logo";
+import Logo from "../components/logo/logo";
 
-export default function Login() {
+export default function Page() {
   const [email, setEmail, clearEmail] = useInput("");
   const [password, setPassword, clearPassword] = useInput("");
   const [emailError, setEmailError] = useState(false);

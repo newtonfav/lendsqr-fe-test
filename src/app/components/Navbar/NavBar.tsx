@@ -1,18 +1,17 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "../Logo/Logo";
-import Search from "../Search/Search";
-import Profile from "../Profile/Profile";
+import Logo from "../logo/logo";
 import { Roboto } from "next/font/google";
-import BellIcon from "../../assets/icons/BellIcon";
-import Menu from "../../assets/icons/Menu";
-import Sidebar from "../Sidebar/Sidebar";
-import sidebarElements from "../SidebarElements/SidebarElements";
-import SidebarSections from "../SidebarSections/SidebarSections";
-import BriefCase from "../../assets/icons/BriefCase";
-import DropDownOrg from "../../assets/icons/DropDownOrg";
-import Home from "../../assets/icons/Home";
-import Close from "../../assets/icons/Close";
+import BellIcon from "../../assets/icons/bellIcon";
+import Menu from "../../assets/icons/menu";
+import sidebarElements from "../sidebar-elements/sidebar-elements";
+import SidebarSections from "../sidebar-sections/sidebar-sections";
+import BriefCase from "../../assets/icons/brief-case";
+import DropDownOrg from "../../assets/icons/dropdown-org";
+import Home from "../../assets/icons/home";
+import Close from "../../assets/icons/close";
+import Search from "../search/search";
+import Profile from "../profile/profile";
 
 const roboto = Roboto({ weight: "300", subsets: ["latin"] });
 

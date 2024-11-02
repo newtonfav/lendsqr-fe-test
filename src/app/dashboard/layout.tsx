@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
-import NavBar from "../components/Navbar/NavBar";
+import NavBar from "../components/navbar/navbar";
 import { Work_Sans } from "next/font/google";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Sidebar from "../components/sidebar/sidebar";
 
 const worksans = Work_Sans({ subsets: ["latin"] });
 

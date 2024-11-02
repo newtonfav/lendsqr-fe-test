@@ -1,6 +1,6 @@
 import React from "react";
-import SidebarLinks from "../SidebarLinks/SidebarLinks";
-import { ISection } from "../SidebarElements/SidebarElements";
+import SidebarLinks from "../sidebar-links/sidebar-links";
+import { ISection } from "../sidebar-elements/sidebar-elements";
 
 export default function SidebarSections({ section, children }: ISection) {
   return (

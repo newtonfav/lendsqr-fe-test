@@ -1,5 +1,5 @@
 "use client";
-import { useUser } from "@/src/app/context/userContext";
+import { useUser } from "@/src/app/context/user-context";
 import {
   getGenderFromNumericValue,
   getMaritalStatus,
@@ -9,7 +9,7 @@ import {
 import formatIncomeRange from "@/src/app/utils/helpers/formatIncomeRange";
 import React from "react";
 
-export default function UserDetailsPage() {
+export default function Page() {
   const { profile, education, socials, guarantor, firstName } = useUser();
   const userGender = getGenderFromNumericValue(profile.gender);
   const guarantorRelationship = getRelationshipFromNumericValue(

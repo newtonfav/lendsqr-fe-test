@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import PageLimit from "../PageLimit/PageLimit";
-import Pagination from "../Pagination/Pagination";
+import PageLimit from "../page-limit/page-limit";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Pagination from "../pagination/pagination";
 
 export default function UsersDashboardFooter({
   totalUsers,

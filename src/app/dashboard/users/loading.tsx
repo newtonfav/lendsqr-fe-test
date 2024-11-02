@@ -1,9 +1,9 @@
 import React from "react";
-import BackArrow from "../../assets/icons/BackArrow";
-import ProfileIcon from "../../assets/icons/ProfileIcon";
-import UnStar from "../../assets/icons/UnStar";
-import UserPageNav from "../../components/UserPageNav/UserPageNav";
-import UserPageSkeleton from "../../components/SkeletonLoaders/UserPageSkeleton/UserPageSkeleton";
+import BackArrow from "../../assets/icons/back-arrow";
+import ProfileIcon from "../../assets/icons/profile-icon";
+import UnStar from "../../assets/icons/unstar";
+import UserPageNav from "../../components/user-page-nav/user-page-nav";
+import UserPageSkeleton from "../../components/skeleton-loaders/user-page-skeleton/user-page-skeleton";
 
 const userpageNavigation = [
   {
@@ -26,7 +26,7 @@ const userpageNavigation = [
   },
 ];
 
-export default function loading() {
+export default function Loading() {
   return (
     <div className="userpage">
       <div className="userpage__back">
