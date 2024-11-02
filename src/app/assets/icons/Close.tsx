@@ -13,8 +13,8 @@ export default function Close() {
         d="M2 2L32 32M2 32L32 2"
         stroke="#213F7D"
         strokeWidth="4.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

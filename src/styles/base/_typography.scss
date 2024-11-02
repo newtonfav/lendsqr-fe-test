@@ -2,10 +2,35 @@
   &--name {
     font-size: 1.2rem;
     margin-bottom: 0.4rem;
+    display: inline-flex;
+
+    @include respond(mini-tab) {
+      font-size: 1rem;
+    }
+
+    @include respond(phone) {
+      font-size: 0.8rem;
+    }
+
+    @include respond(mini-phone) {
+      font-size: 1.2rem;
+    }
   }
 
   &--userid {
     font-size: 0.8rem;
     font-weight: 300;
+
+    @include respond(mini-tab) {
+      font-size: 0.7rem;
+    }
+
+    @include respond(phone) {
+      font-size: 0.5rem;
+    }
+
+    @include respond(mini-phone) {
+      font-size: 0.8rem;
+    }
   }
 }

@@ -1,6 +1,10 @@
 .userpage {
   padding: 1rem 2rem;
 
+  @include respond(small-phone) {
+    padding: 0.5rem 0.5rem;
+  }
+
   &__back {
     display: inline-flex;
     margin-bottom: 1.5rem;
@@ -8,6 +12,10 @@
     font-weight: 300;
     gap: 0.5rem;
     font-size: 0.9rem;
+
+    @include respond(small-phone) {
+      font-size: 0.8rem;
+    }
   }
 
   &__heading {
@@ -20,6 +28,10 @@
       font-weight: 400;
       color: $primary-accent;
       font-size: 1.2rem;
+
+      @include respond(small-phone) {
+        font-size: 1rem;
+      }
     }
 
     &--buttons {
@@ -36,6 +48,14 @@
     box-shadow: $box-shadow;
     padding: 2rem 1.7rem 0rem 1.7rem;
     border-radius: 0.2rem;
+
+    @include respond(mini-tab) {
+      padding: 2rem 1rem 0 1rem;
+    }
+
+    @include respond(small-phone) {
+      padding: 1rem 0.5rem 0 0.5rem;
+    }
   }
 
   &__details {
@@ -45,16 +65,37 @@
     align-items: center;
     color: $primary-accent;
 
+    @include respond(mini-phone) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
     &--profileicon {
       background-color: $profile-color;
       border-radius: 6rem;
       padding: 2.6rem;
+
+      @include respond(mini-tab) {
+        padding: 2rem;
+      }
+
+      @include respond(phone) {
+        padding: 1.5rem;
+      }
     }
 
     &--profile {
       display: flex;
       flex-direction: column;
       padding: 0 2rem;
+
+      @include respond(mini-tab) {
+        padding: 0 1rem;
+      }
+
+      @include respond(mini-phone) {
+        align-items: center;
+      }
     }
 
     &--usertier {
@@ -64,10 +105,36 @@
       color: hsla(224, 20%, 41%, 1);
       @include sideborder;
 
+      @include respond(mini-tab) {
+        padding: 1rem 1.5rem;
+      }
+
+      @include respond(phone) {
+        padding: 0.8rem 1rem;
+      }
+
+      @include respond(mini-phone) {
+        border: 0;
+      }
+
+      @include respond(mini-phone) {
+        align-items: center;
+      }
+
       p {
         font-size: 0.8rem;
         font-weight: 450;
         margin-bottom: 0.5rem;
+
+        @include respond(phone) {
+          font-size: 0.6rem;
+          text-wrap: nowrap;
+        }
+
+        @include respond(mini-phone) {
+          font-size: 0.8rem;
+          margin-bottom: 0;
+        }
       }
 
       span {
@@ -79,13 +146,47 @@
     &--balance {
       margin-left: 2rem;
 
+      @include respond(phone) {
+        margin-left: 1rem;
+      }
+
+      @include respond(mini-phone) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       h3 {
         font-size: 1.4rem;
         font-weight: 450;
+
+        @include respond(mini-tab) {
+          font-size: 1.2rem;
+        }
+
+        @include respond(phone) {
+          font-size: 1rem;
+        }
+
+        @include respond(small-phone) {
+          font-size: 0.8rem;
+        }
+
+        @include respond(mini-phone) {
+          font-size: 1.5rem;
+        }
       }
 
       span {
         font-size: 0.7rem;
+
+        @include respond(mini-tab) {
+          font-size: 0.6rem;
+        }
+
+        @include respond(phone) {
+          font-size: 0.5rem;
+        }
       }
     }
 
@@ -95,6 +196,14 @@
       justify-content: space-evenly;
       font-weight: 300;
       font-size: 0.9rem;
+
+      @media (max-width: 800px) {
+        font-size: 0.7rem;
+      }
+
+      @include respond(mini-phone) {
+        display: none;
+      }
     }
   }
 

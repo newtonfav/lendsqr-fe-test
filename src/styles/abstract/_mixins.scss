@@ -48,6 +48,16 @@
   border-radius: 0.5rem;
   font-weight: 550;
   text-transform: uppercase;
+
+  @include respond(mini-tab) {
+    font-size: 0.5rem;
+    padding: 0.4rem 1.5rem;
+  }
+
+  @include respond(small-phone) {
+    padding: 0.4rem 1rem;
+    font-size: 0.45rem;
+  }
 }
 
 @mixin sideborder {
@@ -70,10 +80,12 @@
   color: rgb(100, 99, 99);
 }
 
-//MEDIA Queries
+////////////////MEDIA QUERIES////////////////
+
 /* 
-0 - 600px: Phone
-500 - 600px: Small Phone
+0 - 450px: Mini Phone
+450 - 500px: Small Phone
+500 - 600px: Phone
 600 - 700px: Mini Tabs
 600 - 700px: Tablet Portrait
 900 - 1200px: Tablet Landscape 
@@ -82,6 +94,7 @@
 
 
 Breakpoints 
+- mini-phone
 - small-phone
 - phone
 - mini-tab
@@ -91,6 +104,12 @@ Breakpoints
 */
 
 @mixin respond($breakpoint) {
+  @if $breakpoint == mini-phone {
+    @media (max-width: 28.125em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == small-phone {
     @media (max-width: 31.25em) {
       //500px

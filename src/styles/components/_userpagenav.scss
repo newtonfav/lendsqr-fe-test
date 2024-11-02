@@ -1,6 +1,15 @@
 .userpage__nav {
   padding: 0.4rem 1rem;
 
+  @include respond(phone) {
+    padding: 0.4rem 0.5rem;
+  }
+
+  @include respond(small-phone) {
+    text-wrap: nowrap;
+    font-size: 0.5rem;
+  }
+
   &--active {
     border-bottom: 2px solid $sidebar-border-active;
     color: $sidebar-border-active;

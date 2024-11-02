@@ -91,6 +91,11 @@
       left: 50%;
       top: 3.5rem;
     }
+
+    @include respond(mini-phone) {
+      width: 70%;
+      left: 40%;
+    }
   }
 
   &__search {
