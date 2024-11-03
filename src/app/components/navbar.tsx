@@ -2,7 +2,7 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import Logo from "./logo";
 import { Roboto } from "next/font/google";
-import BellIcon from "../assets/icons/bellIcon";
+import BellIcon from "../assets/icons/bellicon";
 import Menu from "../assets/icons/menu";
 import SidebarSections from "./sidebar-sections";
 import BriefCase from "../assets/icons/brief-case";
