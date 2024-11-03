@@ -5,24 +5,12 @@ import UnStar from "../../assets/icons/unstar";
 import UserPageSkeleton from "../../components/skeleton-loaders/user-page-skeleton";
 
 const userpageNavigation = [
-  {
-    text: "General Details",
-  },
-  {
-    text: "Documents",
-  },
-  {
-    text: "Bank Details",
-  },
-  {
-    text: "Loans",
-  },
-  {
-    text: "Savings",
-  },
-  {
-    text: "App and System",
-  },
+  "General Details",
+  "Documents",
+  "Bank Details",
+  "Loans",
+  "Savings",
+  "App and System",
 ];
 
 export default function Loading() {
@@ -54,7 +42,7 @@ export default function Loading() {
           </div>
 
           <div className="userpage__details--usertier">
-            <p>User's Tier</p>
+            <p>User&apos;s Tier</p>
             <span>
               {Array.from([1, 2, 3]).map((index) => (
                 <UnStar key={index} />
@@ -69,7 +57,7 @@ export default function Loading() {
         </div>
 
         <div className="userpage__details--nav">
-          {userpageNavigation.map(({ text }, index) => (
+          {userpageNavigation.map((text, index) => (
             <span className="userpage__nav" key={index}>
               {text}
             </span>

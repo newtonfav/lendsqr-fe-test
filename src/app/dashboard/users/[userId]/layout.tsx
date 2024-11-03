@@ -90,7 +90,7 @@ export default async function Layout({
           </div>
 
           <div className="userpage__details--usertier">
-            <p>User's Tier</p>
+            <p>User&apos;s Tier</p>
             <span>
               <Star />
               {Array.from([1, 2]).map((index) => (

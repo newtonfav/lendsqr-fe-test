@@ -2,5 +2,9 @@
 import React from "react";
 
 export default function Error() {
-  return <div className="error">Something went wrong!</div>;
+  return (
+    <div data-testid="error" className="error">
+      Something went wrong!
+    </div>
+  );
 }

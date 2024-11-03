@@ -2,7 +2,7 @@
 import { createContext, useContext, ReactNode } from "react";
 import { IUser } from "../utils/models/userModel";
 
-interface UserContextType extends IUser {}
+type UserContextType = IUser;
 
 const UserContext = createContext<UserContextType | null>(null);
 
