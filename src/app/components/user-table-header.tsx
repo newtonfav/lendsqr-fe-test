@@ -104,6 +104,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
       {headers.map((name, index) => (
         <div
           key={index}
+          data-testid="usertableheader__container"
           className={`usertableheader__container usertableheader__${
             name.split(" ")[0]
           }`}
@@ -160,6 +161,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
           />
           <div className="filter__button">
             <button
+              data-testid="filter__button--reset"
               className="filter__button--reset"
               onClick={handleResetFilters}
             >

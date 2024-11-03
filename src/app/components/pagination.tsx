@@ -24,16 +24,18 @@ function Pagination({
 
   const renderPageNumbers = () => {
     const pages = [];
+    const showEllipsisLeft = currentPage > 3;
+    const showEllipsisRight = currentPage < totalPages - 2;
 
-    if (totalPages <= 4) {
-      // Show all pages if totalPages is 4 or less
+    if (totalPages <= 5) {
+      // Show all pages if totalPages is 5 or less
       for (let i = 1; i <= totalPages; i++) {
         pages.push(
           <button
             key={i}
             onClick={() => handlePageChange(i)}
             className={`usersfooter__pagination--page ${
-              i === currentPage ? "active" : ""
+              i === currentPage ? "usersfooter__pagination--active" : ""
             }`}
           >
             {i}
@@ -41,21 +43,20 @@ function Pagination({
         );
       }
     } else {
-      // Show first page
+      // Always show first page
       pages.push(
         <button
           key={1}
           onClick={() => handlePageChange(1)}
           className={`usersfooter__pagination--page ${
-            currentPage === 1 ? "active" : ""
+            currentPage === 1 ? "usersfooter__pagination--active" : ""
           }`}
         >
           1
         </button>
       );
 
-      // Conditionally add left ellipsis if currentPage is far from the beginning
-      if (currentPage > 3) {
+      if (showEllipsisLeft) {
         pages.push(
           <span key="left-ellipsis" className="ellipsis">
             ...
@@ -63,17 +64,27 @@ function Pagination({
         );
       }
 
-      // Show the current page and one page on either side, limited to four buttons total
-      const startPage = Math.max(2, currentPage - 1);
-      const endPage = Math.min(totalPages - 1, currentPage + 1);
+      // Calculate the range of pages to show around current page
+      let startPage = Math.max(2, currentPage - 1);
+      let endPage = Math.min(totalPages - 1, currentPage + 1);
 
+      // Adjust range when near the beginning or end
+      if (currentPage <= 3) {
+        startPage = 2;
+        endPage = 4;
+      } else if (currentPage >= totalPages - 2) {
+        startPage = totalPages - 3;
+        endPage = totalPages - 1;
+      }
+
+      // Render middle pages
       for (let i = startPage; i <= endPage; i++) {
         pages.push(
           <button
             key={i}
             onClick={() => handlePageChange(i)}
             className={`usersfooter__pagination--page ${
-              i === currentPage ? "active" : ""
+              i === currentPage ? "usersfooter__pagination--active" : ""
             }`}
           >
             {i}
@@ -81,8 +92,7 @@ function Pagination({
         );
       }
 
-      // Conditionally add right ellipsis if currentPage is far from the end
-      if (currentPage < totalPages - 2) {
+      if (showEllipsisRight) {
         pages.push(
           <span key="right-ellipsis" className="ellipsis">
             ...
@@ -90,13 +100,13 @@ function Pagination({
         );
       }
 
-      // Show last page
+      // Always show last page
       pages.push(
         <button
           key={totalPages}
           onClick={() => handlePageChange(totalPages)}
           className={`usersfooter__pagination--page ${
-            currentPage === totalPages ? "active" : ""
+            currentPage === totalPages ? "usersfooter__pagination--active" : ""
           }`}
         >
           {totalPages}
@@ -109,25 +119,29 @@ function Pagination({
 
   return (
     <div className="usersfooter__pagination">
-      <span
+      <button
+        data-testid="left-arrow-pagination"
         className="usersfooter__pagination--leftarrow"
         onClick={() => handlePageChange(currentPage - 1)}
         aria-disabled={currentPage === 1}
+        disabled={currentPage === 1}
       >
         <LeftArrow />
-      </span>
+      </button>
 
       <span className="usersfooter__pagination--pages">
         {renderPageNumbers()}
       </span>
 
-      <span
+      <button
+        data-testid="right-arrow-pagination"
         className="usersfooter__pagination--rightarrow"
         onClick={() => handlePageChange(currentPage + 1)}
         aria-disabled={currentPage === totalPages}
+        disabled={currentPage === totalPages}
       >
         <RightArrow />
-      </span>
+      </button>
     </div>
   );
 }

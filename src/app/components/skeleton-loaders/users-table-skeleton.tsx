@@ -6,7 +6,11 @@ export default function UsersTableSkeleton() {
     <div className="usertable">
       <div className="usertable__row">
         {Array.from({ length: 8 }, (_, index) => index + 1).map((index) => (
-          <div className="tablerow skeleton" key={index}>
+          <div
+            className="tablerow skeleton"
+            data-testid="tablerow-skeleton"
+            key={index}
+          >
             <span className="tablerow__organisation">
               <span className="">organisation</span>
             </span>

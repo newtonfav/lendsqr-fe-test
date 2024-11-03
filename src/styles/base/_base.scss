@@ -46,3 +46,9 @@ body {
 .navlink {
   height: 85dvh;
 }
+
+button {
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

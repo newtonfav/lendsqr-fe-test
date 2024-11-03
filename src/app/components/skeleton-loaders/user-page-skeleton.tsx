@@ -44,7 +44,7 @@ export default function UserPageSkeleton() {
           Education and Employment
         </div>
 
-        <div className="details__container">
+        <div className="details__container" data-testid="details_container">
           {educationAndEmployment.map((title, index) => (
             <div className="details__info" key={index}>
               <h2>{title}</h2>
