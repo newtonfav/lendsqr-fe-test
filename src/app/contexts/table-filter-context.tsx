@@ -21,7 +21,7 @@ interface InitialState {
 
 interface Action {
   type: string;
-  payload?: any;
+  payload?: object;
 }
 
 interface FilterContextType {
@@ -91,9 +91,7 @@ function FilterProvider({
         (filterValues.phone
           ? user.profile.phoneNumber.includes(filterValues.phone)
           : true) &&
-        (filterValues.status
-          ? filterValues.status.includes(Number(user.status))
-          : true)
+        (filterValues.status ? filterValues.status.includes(user.status) : true)
       );
     });
   }, [filterValues, unfilteredData]);

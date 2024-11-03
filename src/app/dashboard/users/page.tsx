@@ -30,7 +30,9 @@ export default async function Page(props: {
         <UsersTable limit={limit} page={page} firstName={firstName} />
       </Suspense>
 
-      <UsersDashboardFooter totalUsers={usersLength} />
+      <Suspense>
+        <UsersDashboardFooter totalUsers={usersLength} />
+      </Suspense>
     </div>
   );
 }

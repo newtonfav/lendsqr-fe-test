@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import Logo from "./logo";
 import { Roboto } from "next/font/google";
 import BellIcon from "../assets/icons/bellIcon";
@@ -47,7 +47,9 @@ export default function NavBar() {
     <div className="navbar">
       <Logo sizeIcon={20} sizeText={25} />
 
-      <Search />
+      <Suspense>
+        <Search />
+      </Suspense>
 
       <div className="navbar__section">
         <span className={`navbar__section--docs ${roboto.className}`}>
