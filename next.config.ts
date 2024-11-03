@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     api: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;

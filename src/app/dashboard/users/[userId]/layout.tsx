@@ -71,8 +71,12 @@ export default async function Layout({
         <h1>User Details</h1>
 
         <div className="userpage__heading--buttons">
-          <button className="button--blacklist">Blacklist User</button>
-          <button className="button--activate">Activate User</button>
+          <button aria-label="blacklist user" className="button--blacklist">
+            Blacklist User
+          </button>
+          <button aria-label="activate user" className="button--activate">
+            Activate User
+          </button>
         </div>
       </div>
 

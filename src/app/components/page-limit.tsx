@@ -14,7 +14,11 @@ function PageLimit({ onPageLimitChange }: PageLimitProps) {
 
   return (
     <span className="">
+      <label htmlFor="page-limit" className="hidden">
+        User Role
+      </label>
       <select
+        id="page-limit"
         value={selectedValue}
         onChange={handleSelectChange}
         className="usersfooter__pagenumber--dropdown"

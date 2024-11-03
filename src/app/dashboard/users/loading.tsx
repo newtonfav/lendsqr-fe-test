@@ -25,8 +25,12 @@ export default function Loading() {
         <h1>User Details</h1>
 
         <div className="userpage__heading--buttons">
-          <button className="skeleton">Blacklist User</button>
-          <button className="skeleton">Activate User</button>
+          <button aria-label="blacklist user" className="skeleton">
+            Blacklist User
+          </button>
+          <button aria-label="activate user" className="skeleton">
+            Activate User
+          </button>
         </div>
       </div>
 

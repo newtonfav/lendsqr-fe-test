@@ -11,7 +11,7 @@ export default function Logo({
   sizeIcon?: number;
 }) {
   return (
-    <Link href="/">
+    <Link href="/" aria-label="home page">
       <div className="logo">
         <LogoIcon size={sizeIcon} />
         <LogoText size={sizeText} />

@@ -84,7 +84,7 @@ export default function Page() {
             errorMessage="Password must be at least 8 characters!"
           />
           <span className="">Forgot Password?</span>
-          <button>Log in</button>
+          <button aria-label="Log in">Log in</button>
         </form>
       </div>
     </div>

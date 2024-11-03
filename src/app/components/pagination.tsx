@@ -33,6 +33,7 @@ function Pagination({
         pages.push(
           <button
             key={i}
+            aria-label="page number"
             onClick={() => handlePageChange(i)}
             className={`usersfooter__pagination--page ${
               i === currentPage ? "usersfooter__pagination--active" : ""
@@ -47,6 +48,7 @@ function Pagination({
       pages.push(
         <button
           key={1}
+          aria-label="page number"
           onClick={() => handlePageChange(1)}
           className={`usersfooter__pagination--page ${
             currentPage === 1 ? "usersfooter__pagination--active" : ""
@@ -82,6 +84,7 @@ function Pagination({
         pages.push(
           <button
             key={i}
+            aria-label="page number"
             onClick={() => handlePageChange(i)}
             className={`usersfooter__pagination--page ${
               i === currentPage ? "usersfooter__pagination--active" : ""
@@ -104,6 +107,7 @@ function Pagination({
       pages.push(
         <button
           key={totalPages}
+          aria-label="page number"
           onClick={() => handlePageChange(totalPages)}
           className={`usersfooter__pagination--page ${
             currentPage === totalPages ? "usersfooter__pagination--active" : ""
@@ -121,6 +125,7 @@ function Pagination({
     <div className="usersfooter__pagination">
       <button
         data-testid="left-arrow-pagination"
+        aria-label="previous page button"
         className="usersfooter__pagination--leftarrow"
         onClick={() => handlePageChange(currentPage - 1)}
         aria-disabled={currentPage === 1}
@@ -135,6 +140,7 @@ function Pagination({
 
       <button
         data-testid="right-arrow-pagination"
+        aria-label="next page button"
         className="usersfooter__pagination--rightarrow"
         onClick={() => handlePageChange(currentPage + 1)}
         aria-disabled={currentPage === totalPages}

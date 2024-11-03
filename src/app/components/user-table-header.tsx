@@ -161,6 +161,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
           />
           <div className="filter__button">
             <button
+              aria-label="reset filter"
               data-testid="filter__button--reset"
               className="filter__button--reset"
               onClick={handleResetFilters}
@@ -168,6 +169,7 @@ export default function UserTableHeader({ organisations }: IUserTableHeader) {
               Reset
             </button>
             <button
+              aria-label="filter"
               className="filter__button--filter"
               onClick={handleFilterSubmit}
             >
