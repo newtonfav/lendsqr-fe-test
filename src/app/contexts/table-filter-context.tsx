@@ -94,7 +94,9 @@ function FilterProvider({
           ? user.organisation.toLowerCase().includes(filterValues.organisation)
           : true) &&
         (filterValues.username
-          ? user.firstName.toLowerCase().includes(filterValues.username)
+          ? user.firstName
+              .toLowerCase()
+              .includes(filterValues.username.split("")[0])
           : true) &&
         (filterValues.email
           ? user.profile.email.toLowerCase().includes(filterValues.email)

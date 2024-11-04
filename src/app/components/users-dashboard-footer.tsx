@@ -26,7 +26,7 @@ export default function UsersDashboardFooter({
       <div className="usersfooter__pagenumber">
         Showing
         <PageLimit onPageLimitChange={updateUrlParams} />
-        out of 100
+        out of {totalPages}
       </div>
 
       <Pagination totalPages={totalPages} onPageChange={updateUrlParams} />
