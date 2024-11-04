@@ -7,6 +7,7 @@ import {
   useReducer,
   useState,
   Dispatch,
+  useEffect,
 } from "react";
 import { IUser } from "../models/userModel";
 import formatDate from "../utils/functions/formatDate";
@@ -65,6 +66,10 @@ function FilterProvider({
   const [unfilteredData, setUnfilteredData] = useState<IUser[]>(
     initialUnfilteredData
   );
+
+  useEffect(() => {
+    setUnfilteredData(initialUnfilteredData);
+  }, [initialUnfilteredData]);
 
   const updateUserStatus = (userId: string, newStatus: string) => {
     setUnfilteredData((prevData) =>
