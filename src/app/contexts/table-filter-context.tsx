@@ -7,7 +7,7 @@ import {
   useReducer,
   Dispatch,
 } from "react";
-import { IUser } from "../utils/models/userModel";
+import { IUser } from "../models/userModel";
 import formatDate from "../utils/functions/formatDate";
 
 interface InitialState {

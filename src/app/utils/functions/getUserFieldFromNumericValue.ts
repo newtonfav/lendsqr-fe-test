@@ -3,7 +3,7 @@ import {
   MaritalStatus,
   Relationship,
   ResidenceType,
-} from "../models/enums";
+} from "../../models/enums";
 
 export type Status = "inactive" | "pending" | "blacklisted" | "active";
 

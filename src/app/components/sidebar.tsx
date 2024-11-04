@@ -4,7 +4,7 @@ import BriefCase from "../assets/icons/brief-case";
 import DropDownOrg from "../assets/icons/dropdown-org";
 import Home from "../assets/icons/home";
 import SidebarSections from "./sidebar-sections";
-import sidebarElements from "../utils/helpers/sidebar-elements";
+import sidebarElements from "../utils/functions/sidebar-elements";
 
 export default function Sidebar() {
   return (

@@ -11,7 +11,7 @@ import Home from "../assets/icons/home";
 import Close from "../assets/icons/close";
 import Profile from "./profile";
 import Search from "./search";
-import sidebarElements from "../utils/helpers/sidebar-elements";
+import sidebarElements from "../utils/functions/sidebar-elements";
 
 const roboto = Roboto({ weight: "300", subsets: ["latin"] });
 

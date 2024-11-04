@@ -6,7 +6,7 @@ import {
   getRelationshipFromNumericValue,
   getResidenceType,
 } from "@/src/app/utils/functions/getUserFieldFromNumericValue";
-import formatIncomeRange from "@/src/app/utils/helpers/formatIncomeRange";
+import formatIncomeRange from "@/src/app/utils/functions/formatIncomeRange";
 import React from "react";
 
 export default function Page() {

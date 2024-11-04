@@ -1,6 +1,6 @@
 import React from "react";
-import { IUser } from "../utils/models/userModel";
-import filterOrganisationsFromUserdata from "../utils/helpers/filterOrganisationsFromUserdata";
+import { IUser } from "../models/userModel";
+import filterOrganisationsFromUserdata from "../utils/functions/filterOrganisationsFromUserdata";
 
 import { FilterProvider } from "../contexts/table-filter-context";
 import UserTableHeader from "./user-table-header";

@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, ReactNode } from "react";
-import { IUser } from "../utils/models/userModel";
+import { IUser } from "../models/userModel";
 
 type UserContextType = IUser;
 

@@ -1,4 +1,4 @@
-import { IUser } from "../models/userModel";
+import { IUser } from "../../models/userModel";
 
 function filterOrganisationsFromUserdata(data: IUser[]) {
   // Use Set to filter out unique organisations
