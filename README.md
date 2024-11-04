@@ -1,6 +1,6 @@
 # Lendsqr Frontend Assessment test
 
-Lendsqr is a lending solution platform that helps lenders launch, scale, and succeed their lending business with their loan management system and lending APIs. Lendsqr is committed to bridging the global credit gap by empowering lenders to offer accessible, efficient, and data-driven lending solutions.
+Lendsqr is a lending solution platform that helps lenders launch, scale, and succeed in their lending business with their loan management system and lending APIs. Lendsqr is committed to bridging the global credit gap by empowering lenders to offer accessible, efficient, and data-driven lending solutions.
 
 # Getting Started
 
@@ -31,12 +31,6 @@ npm run dev
 # Project structure
 
 This is a Next.js and SASS project, designed with a component-driven approach to emphasize modularity, reusability, and scalability.
-
-Routing System: NextJS App Router
-CSS Architecture: 7-1 SASS architecture
-Class Naming Architecture: BEM - Block Element Modifier
-File Naming Convention: kebab-case
-Component Naming Convention: PascalCase
 
       src
       |
@@ -85,6 +79,14 @@ Component Naming Convention: PascalCase
             |
             |____ main.scss # Main sass file, all styles are imported here
 
+# Conventions
+
+- Routing System: NextJS App Router
+- CSS Architecture: 7-1 SASS architecture
+- Class Naming Architecture: BEM - Block Element Modifier
+- File Naming Convention: kebab-case
+- Component Naming Convention: PascalCase
+
 # Implemented Features
 
 All tasks in the assessment were implemented, in addition to:
@@ -98,7 +100,7 @@ All tasks in the assessment were implemented, in addition to:
 - [x] Skeleton loaders were implemented for intuitive user experience.
 - [x] Error Boundary and Not found page are implemented.
 - [x] User input are validated on login page with regex.
-- [x] Users details are cached on the browser local storage to improve performance.
+- [x] Lenders can update users status(Doesn't persist on page reload).
 - [x] Lenders can blacklist users on the dashboard.
 
 ## Technologies Used

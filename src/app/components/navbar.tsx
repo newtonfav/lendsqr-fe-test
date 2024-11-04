@@ -71,6 +71,7 @@ export default function NavBar() {
         <div
           className={`navbar__sidebar ${menuOpen ? "active" : "inactive"}`}
           ref={menuRef}
+          onClick={handleMenuToggle}
         >
           <div className="sidebar--static">
             <BriefCase />

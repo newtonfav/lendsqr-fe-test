@@ -5,6 +5,7 @@ import {
   ReactNode,
   useMemo,
   useReducer,
+  useState,
   Dispatch,
 } from "react";
 import { IUser } from "../models/userModel";
@@ -28,6 +29,7 @@ interface FilterContextType {
   unfilteredData: IUser[];
   filteredData?: IUser[];
   dispatch: Dispatch<Action>;
+  updateUserStatus: (userId: string, newStatus: string) => void;
 }
 
 const FilterContext = createContext<FilterContextType | null>(null);
@@ -54,26 +56,33 @@ function reducer(state: InitialState, action: Action) {
 
 function FilterProvider({
   children,
-  unfilteredData,
+  unfilteredData: initialUnfilteredData,
 }: {
   children: ReactNode;
   unfilteredData: IUser[];
 }) {
   const [filterValues, dispatch] = useReducer(reducer, initialState);
+  const [unfilteredData, setUnfilteredData] = useState<IUser[]>(
+    initialUnfilteredData
+  );
 
-  // Memoize filteredData to optimize performance
+  const updateUserStatus = (userId: string, newStatus: string) => {
+    setUnfilteredData((prevData) =>
+      prevData.map((user) =>
+        user.id === userId ? { ...user, status: newStatus } : user
+      )
+    );
+  };
+
   const filteredData = useMemo(() => {
-    // Check if all filter values are empty
     const noFiltersApplied = Object.values(filterValues).every(
       (value) => value === ""
     );
 
     if (noFiltersApplied) {
-      // Return all data if no filters are applied
       return unfilteredData;
     }
 
-    // Filter based on non-empty filter values
     return unfilteredData.filter((user) => {
       return (
         (filterValues.organisation
@@ -104,6 +113,7 @@ function FilterProvider({
         dispatch,
         unfilteredData,
         filteredData,
+        updateUserStatus,
       }}
     >
       {children}

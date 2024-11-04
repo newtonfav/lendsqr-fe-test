@@ -7,6 +7,7 @@ import Link from "next/link";
 import Blacklist from "../assets/icons/blacklist";
 import View from "../assets/icons/view";
 import Activate from "../assets/icons/activate";
+import { useFilter } from "../contexts/table-filter-context";
 
 interface IUserRow {
   organisation: string;
@@ -32,6 +33,7 @@ export default function UserTableRow({
   const userStatus = getStatusFromApiValue(Number(status)).toLowerCase();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { updateUserStatus } = useFilter();
 
   const toggleMenuVisibility = () => {
     setIsMenuVisible((prev) => !prev);
@@ -53,6 +55,16 @@ export default function UserTableRow({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  function handleBlacklistUser() {
+    updateUserStatus(userId, "6");
+    toggleMenuVisibility();
+  }
+
+  function handleActivateUser() {
+    updateUserStatus(userId, "8");
+    toggleMenuVisibility();
+  }
 
   return (
     <div className="tablerow">
@@ -81,11 +93,17 @@ export default function UserTableRow({
             <View />
             View Details
           </Link>
-          <span className="tablerow__menu--blacklist">
+          <span
+            className="tablerow__menu--blacklist"
+            onClick={handleBlacklistUser}
+          >
             <Blacklist />
             Blacklist User
           </span>
-          <span className="tablerow__menu--activate">
+          <span
+            className="tablerow__menu--activate"
+            onClick={handleActivateUser}
+          >
             <Activate />
             Activate User
           </span>
