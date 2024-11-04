@@ -91,7 +91,9 @@ function FilterProvider({
         (filterValues.phone
           ? user.profile.phoneNumber.includes(filterValues.phone)
           : true) &&
-        (filterValues.status ? filterValues.status.includes(user.status) : true)
+        (filterValues.status
+          ? filterValues.status.toString().includes(user.status)
+          : true)
       );
     });
   }, [filterValues, unfilteredData]);
