@@ -19,11 +19,11 @@ export interface IUserProfile {
   lastName: string;
   phoneNumber: string;
   children: string;
-  avatar: string;
+  // avatar: string;
   gender: string;
   bvn: string;
   address: string;
-  currency: string;
+  // currency: string;
   userID: string;
   residenceType: string;
   maritalStatus: string;

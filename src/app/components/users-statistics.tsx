@@ -3,6 +3,7 @@ import DashboardUsers from "../assets/icons/dashboard-users";
 import ActiveUsers from "../assets/icons/active-users";
 import UsersWithoans from "../assets/icons/users-with-loans";
 import UsersWithSavings from "../assets/icons/users-with-savings";
+import { mockStatistics } from "../mock/mockStatistics";
 
 export interface IUserStats {
   Icon: FC;
@@ -19,8 +20,8 @@ interface IUsersStatistics {
 }
 
 export default async function UsersStatistics() {
-  const res = await fetch(`${process.env.URL}/statistics`);
-  const data = await res.json();
+  // const res = await fetch(`${process.env.URL}/statistics`);
+  const data = mockStatistics;
   const statistics: IUsersStatistics = data[0];
 
   const userstats: IUserStats[] = [

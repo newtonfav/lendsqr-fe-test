@@ -8,6 +8,8 @@ import React from "react";
 import { IUser } from "@/src/app/models/userModel";
 import { UserProvider } from "@/src/app/contexts/user-context";
 import UserPageNav from "@/src/app/components/user-page-nav";
+import { mockUsersData } from "@/src/app/mock/mockUsersData";
+import { notFound } from "next/navigation";
 
 type Params = Promise<{ userId: string }>;
 
@@ -20,8 +22,10 @@ export default async function Layout({
 }) {
   const { userId } = await params;
 
-  const res = await fetch(`${process.env.URL}/users/${userId}`);
-  const data: IUser = await res.json();
+  // Use mock data instead of fetching
+  const data = (mockUsersData as IUser[]).find((user) => user.id === userId);
+
+  if (!data) return notFound();
 
   const { lastName, userID } = data.profile;
 
