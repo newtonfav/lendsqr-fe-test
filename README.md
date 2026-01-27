@@ -2,6 +2,15 @@
 
 Lendsqr is a lending solution platform that helps lenders launch, scale, and succeed in their lending business with their loan management system and lending APIs. Lendsqr is committed to bridging the global credit gap by empowering lenders to offer accessible, efficient, and data-driven lending solutions.
 
+# Deployed App
+
+You can access the live url here [Lendsqr](https://favour-oghenekowho-lendsqr.vercel.app/login)
+
+```
+Email: favour@example.com
+Password: Password@123
+```
+
 # Getting Started
 
 Go to any directory on your machine:
